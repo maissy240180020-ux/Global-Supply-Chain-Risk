@@ -1,0 +1,153 @@
+/* ===============================
+   GLOBAL
+================================= */
+
+body{
+
+    background:#f5f7fb;
+
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+/* ===============================
+   CARD
+================================= */
+
+.card{
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/* ===============================
+   BUTTON
+================================= */
+
+.btn{
+
+    border-radius:8px;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:#0d6efd;
+
+    border:none;
+
+}
+
+.btn-success{
+
+    border:none;
+
+}
+
+.btn-warning{
+
+    border:none;
+
+}
+
+.btn-danger{
+
+    border:none;
+
+}
+
+/* ===============================
+   INPUT
+================================= */
+
+.form-control,
+
+.form-select{
+
+    border-radius:8px;
+
+}
+
+.form-control:focus,
+
+.form-select:focus{
+
+    box-shadow:none;
+
+    border-color:#0d6efd;
+
+}
+
+/* ===============================
+   TABLE
+================================= */
+
+.table{
+
+    vertical-align:middle;
+
+}
+
+.table thead{
+
+    background:#0d6efd;
+
+    color:white;
+
+}
+
+/* ===============================
+   JUDUL HALAMAN
+================================= */
+
+.page-title{
+
+    font-weight:bold;
+
+    color:#0d6efd;
+
+}
+
+/* ===============================
+   SIDEBAR
+================================= */
+
+.sidebar{
+
+    background:#0d6efd;
+
+}
+
+.sidebar a{
+
+    color:white;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:8px;
+
+}
+
+/* ===============================
+   LOGIN
+================================= */
+
+.login-card{
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}

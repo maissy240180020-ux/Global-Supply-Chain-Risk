@@ -27,7 +27,50 @@
         </div>
 
     </div>
-@stack('scripts')
+
+    @stack('scripts')
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: '{{ session("success") }}',
+            timer: 2000,
+            showConfirmButton: false
+        });
+    </script>
+    @endif
+
+    <script>
+        document.querySelectorAll('.delete-form').forEach(form => {
+
+            form.addEventListener('submit', function(e) {
+
+                e.preventDefault();
+
+                Swal.fire({
+                    title: 'Hapus Country?',
+                    text: 'Data yang dihapus tidak bisa dikembalikan.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
+
 </body>
 
 </html>

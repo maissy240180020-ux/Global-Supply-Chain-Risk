@@ -1,12 +1,18 @@
 <div class="card dashboard-card mb-4">
 
-    <div class="card-header bg-white">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
 
         <h5 class="mb-0">
 
-            🚢 Port Location Map
+            🚢 Peta Lokasi Pelabuhan
 
         </h5>
+
+        <span class="badge bg-primary">
+
+            Pemantauan
+
+        </span>
 
     </div>
 
@@ -16,13 +22,23 @@
 
             <div class="text-center">
 
-                <h2>🚢</h2>
+                <h1 class="mb-3">
 
-                <h5>Port Monitoring</h5>
+                    🚢
 
-                <p class="text-muted">
+                </h1>
 
-                    Nanti akan menampilkan lokasi pelabuhan menggunakan Leaflet.
+                <h5 class="fw-bold">
+
+                    Sistem Pemantauan Pelabuhan
+
+                </h5>
+
+                <p class="text-muted mb-0">
+
+                    Halaman ini akan menampilkan lokasi pelabuhan internasional
+                    beserta informasi aktivitas dan tingkat risiko menggunakan
+                    peta interaktif Leaflet.
 
                 </p>
 

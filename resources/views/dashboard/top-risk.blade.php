@@ -3,26 +3,37 @@
     <div class="card-header bg-white">
 
         <h5 class="mb-0">
-            🔥 Top 5 Highest Risk Countries
+
+            🔥 5 Negara dengan Risiko Tertinggi
+
         </h5>
 
     </div>
 
     <div class="card-body">
 
-        @foreach($topRiskCountries as $index => $country)
+        @forelse($topRiskCountries as $index => $country)
 
         <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
 
             <div>
 
-                <strong>{{ $index + 1 }}.</strong>
+                <div class="fw-semibold">
 
-                {{ $country->country_name }}
+                    {{ $index + 1 }}. {{ $country->country_name }}
+
+                </div>
+
+                <small class="text-muted">
+
+                    Tingkat Risiko :
+                    {{ $country->risk_level }}
+
+                </small>
 
             </div>
 
-            <div>
+            <div class="text-end">
 
                 @php
 
@@ -40,21 +51,39 @@
 
                 <span class="badge {{ $badge }}">
 
-                   {{ number_format($country->risk_score, 0) }}
+                    {{ number_format($country->risk_score,0) }}
+
                 </span>
 
             </div>
 
         </div>
 
-        @endforeach
+        @empty
 
-        <div class="text-center mt-3">
+        <div class="text-center py-4">
 
-            <a href="{{ route('countries.index') }}"
-               class="btn btn-outline-primary btn-sm">
+            <i class="bi bi-database text-secondary fs-1"></i>
 
-                View All Countries
+            <p class="mt-3 text-muted">
+
+                Belum ada data negara.
+
+            </p>
+
+        </div>
+
+        @endforelse
+
+        <div class="text-center mt-4">
+
+            <a
+                href="{{ route('countries.index') }}"
+                class="btn btn-outline-primary">
+
+                <i class="bi bi-globe2"></i>
+
+                Lihat Semua Data Negara
 
             </a>
 

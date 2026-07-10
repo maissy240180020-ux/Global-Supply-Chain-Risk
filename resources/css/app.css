@@ -49,8 +49,8 @@ body{
 
 .main-content{
     margin-left:260px;
+    padding:20px;
 }
-
 .navbar{
     background:white;
     padding:20px;
@@ -60,7 +60,7 @@ body{
     box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.container-fluid{
+.main-content .container-fluid{
     padding:25px;
 }
 
@@ -393,4 +393,163 @@ body{
 .leaflet-top,
 .leaflet-bottom{
     z-index:999;
+}
+/* ============================
+SIDEBAR
+============================ */
+
+.sidebar{
+
+    width:260px;
+    height:100vh;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    background:#1E3A8A;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:1000;
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#5B7DE7;
+    border-radius:20px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.logo{
+
+    padding:25px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.sidebar-footer{
+
+    padding:20px;
+
+    color:white;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.sidebar-footer small{
+
+    color:#dbeafe;
+
+}
+
+.menu-title{
+
+    color:#9DB9FF;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    padding:18px 22px 5px;
+
+}
+
+.menu{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0 12px;
+
+}
+
+.menu li{
+
+    margin:6px 0;
+
+}
+
+.menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu li a:hover{
+
+    background:#2563EB;
+
+}
+
+.menu li a.active{
+
+    background:#2563EB;
+
+    font-weight:600;
+
+}
+
+.menu li i{
+
+    font-size:18px;
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+/* ============================
+MAIN CONTENT
+============================ */
+
+.main-content{
+
+    margin-left:260px;
+
+    min-height:100vh;
+
+    background:#F5F7FA;
+
 }

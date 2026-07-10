@@ -1,12 +1,14 @@
 <div class="row g-3 mb-4">
 
-    <!-- Global Risk Score -->
+    <!-- Skor Risiko Global -->
     <div class="col-lg col-md-6">
+
         <div class="card dashboard-card h-100">
+
             <div class="card-body">
 
                 <small class="text-muted">
-                    Global Risk Score
+                    Skor Risiko Global
                 </small>
 
                 <div class="d-flex justify-content-between align-items-center mt-3">
@@ -14,20 +16,27 @@
                     <div>
 
                         <h2 class="fw-bold mb-0">
-                           {{ $averageRisk ?? 0 }}
+
+                            {{ $averageRisk ?? 0 }}
+
                             <small>/100</small>
+
                         </h2>
 
-                        <small class="text-warning">
-                            Average Risk
+                        <small class="text-primary">
+
+                            Rata-rata Tingkat Risiko
+
                         </small>
 
                     </div>
 
                     <div>
 
-                        <span class="badge bg-warning">
-                            LIVE
+                        <span class="badge bg-success">
+
+                            AKTIF
+
                         </span>
 
                     </div>
@@ -35,100 +44,144 @@
                 </div>
 
                 <div class="mini-chart mt-3">
+
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- High Risk -->
+    <!-- Negara Risiko Tinggi -->
     <div class="col-lg col-md-6">
+
         <div class="card dashboard-card h-100">
+
             <div class="card-body">
 
                 <small class="text-muted">
-                    High Risk Countries
+
+                    Negara Risiko Tinggi
+
                 </small>
 
                 <h2 class="mt-3">
+
                     {{ $highRisk }}
+
                 </h2>
 
                 <span class="badge bg-danger">
-                    High
+
+                    Tinggi
+
                 </span>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- Medium Risk -->
+    <!-- Negara Risiko Sedang -->
     <div class="col-lg col-md-6">
+
         <div class="card dashboard-card h-100">
+
             <div class="card-body">
 
                 <small class="text-muted">
-                    Medium Risk Countries
+
+                    Negara Risiko Sedang
+
                 </small>
 
                 <h2 class="mt-3">
+
                     {{ $mediumRisk }}
+
                 </h2>
 
                 <span class="badge bg-warning text-dark">
-                    Medium
+
+                    Sedang
+
                 </span>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- Low Risk -->
+    <!-- Negara Risiko Rendah -->
     <div class="col-lg col-md-6">
+
         <div class="card dashboard-card h-100">
+
             <div class="card-body">
 
                 <small class="text-muted">
-                    Low Risk Countries
+
+                    Negara Risiko Rendah
+
                 </small>
 
                 <h2 class="mt-3">
+
                     {{ $lowRisk }}
+
                 </h2>
 
                 <span class="badge bg-success">
-                    Low
+
+                    Rendah
+
                 </span>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- Total Countries -->
+    <!-- Total Negara -->
     <div class="col-lg col-md-6">
+
         <div class="card dashboard-card h-100">
+
             <div class="card-body">
 
                 <small class="text-muted">
-                    Total Countries
+
+                    Total Negara
+
                 </small>
 
                 <h2 class="mt-3">
+
                     {{ $totalCountries }}
+
                 </h2>
 
                 <span class="badge bg-primary">
-                    Database
+
+                    Data Tersimpan
+
                 </span>
 
             </div>
+
         </div>
+
     </div>
 
 </div>

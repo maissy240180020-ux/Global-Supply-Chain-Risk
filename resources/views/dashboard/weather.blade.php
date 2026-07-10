@@ -1,33 +1,39 @@
 <div class="row">
 
-    <!-- Weather -->
+    <!-- Ringkasan Cuaca -->
     <div class="col-lg-3 mb-4">
 
         <div class="card dashboard-card h-100">
 
             <div class="card-body">
 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
 
-                    <h6>Weather</h6>
+                    <h6 class="fw-bold">
 
-                    <span>🌤</span>
+                        🌤 Ringkasan Cuaca
+
+                    </h6>
 
                 </div>
 
-                <h1 class="mt-3">29°</h1>
+                <h1 class="mt-3">
+
+                    29°C
+
+                </h1>
 
                 <small class="text-muted">
 
-                    Jakarta
+                    Jakarta, Indonesia
 
                 </small>
 
                 <hr>
 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between mb-2">
 
-                    <small>Humidity</small>
+                    <small>Kelembapan</small>
 
                     <strong>78%</strong>
 
@@ -35,9 +41,9 @@
 
                 <div class="d-flex justify-content-between">
 
-                    <small>Wind</small>
+                    <small>Kecepatan Angin</small>
 
-                    <strong>14 km/h</strong>
+                    <strong>14 km/jam</strong>
 
                 </div>
 
@@ -46,31 +52,41 @@
         </div>
 
     </div>
-        <!-- Currency -->
 
+    <!-- Nilai Tukar -->
     <div class="col-lg-3 mb-4">
 
         <div class="card dashboard-card h-100">
 
             <div class="card-body">
 
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
 
-                    <h6>Currency</h6>
+                    <h6 class="fw-bold">
 
-                    <span>💱</span>
+                        💱 Nilai Tukar
+
+                    </h6>
 
                 </div>
 
                 <h3 class="mt-3">
 
-                    16.250
+                    Rp16.250
 
                 </h3>
 
                 <small class="text-success">
 
-                    USD / IDR ▲0.52%
+                    USD/IDR ▲0,52%
+
+                </small>
+
+                <hr>
+
+                <small class="text-muted">
+
+                    Pembaruan terakhir hari ini.
 
                 </small>
 
@@ -79,27 +95,31 @@
         </div>
 
     </div>
-        <!-- News -->
 
+    <!-- Berita -->
     <div class="col-lg-3 mb-4">
 
         <div class="card dashboard-card h-100">
 
             <div class="card-body">
 
-                <h6>Recent News</h6>
+                <h6 class="fw-bold">
+
+                    📰 Berita Terbaru
+
+                </h6>
 
                 <hr>
 
                 <p>
 
-                    Global shipping costs rise again.
+                    Biaya pengiriman global kembali mengalami peningkatan pada minggu ini.
 
                 </p>
 
                 <small class="text-muted">
 
-                    2 jam lalu
+                    2 jam yang lalu
 
                 </small>
 
@@ -108,15 +128,19 @@
         </div>
 
     </div>
-        <!-- Country -->
 
+    <!-- Informasi Negara -->
     <div class="col-lg-3 mb-4">
 
         <div class="card dashboard-card h-100">
 
             <div class="card-body">
 
-                <h6>Country Quick View</h6>
+                <h6 class="fw-bold">
+
+                    🌍 Informasi Negara
+
+                </h6>
 
                 <hr>
 
@@ -128,19 +152,19 @@
 
                 <small>
 
-                    GDP
+                    Produk Domestik Bruto (PDB)
 
                 </small>
 
                 <h5>
 
-                    $1.39T
+                    USD 1,39 Triliun
 
                 </h5>
 
                 <small>
 
-                    Risk Score
+                    Skor Risiko
 
                 </small>
 

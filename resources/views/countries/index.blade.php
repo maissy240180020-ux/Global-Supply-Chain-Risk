@@ -1,189 +1,337 @@
 @extends('layouts.app')
 
-@section('title','Countries')
+@section('title','Data Negara')
 
 @section('content')
 
 <div class="container-fluid">
 
+    <h2 class="fw-bold mb-4">
+        🌍 Data Negara
+    </h2>
+
     <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <h2 class="fw-bold">
+        <form action="{{ route('countries.index') }}"
+              method="GET"
+              class="d-flex w-50">
 
-            🌍 Countries
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                class="form-control me-2"
+                placeholder="Cari nama negara...">
 
-        </h2>
+            <button class="btn btn-primary">
 
-        <button class="btn btn-primary">
+                <i class="bi bi-search"></i>
 
-            + Add Country
+                Cari
 
-        </button>
+            </button>
+
+        </form>
+
+        <a href="{{ route('countries.create') }}"
+           class="btn btn-success">
+
+            <i class="bi bi-plus-circle"></i>
+
+            Tambah Negara
+
+        </a>
 
     </div>
+
+    <div class="row mb-4">
+
+    <div class="col-md-3">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+
+                    Total Negara
+
+                </h6>
+
+                <h2 class="fw-bold text-primary">
+
+                    {{ $countries->total() }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+
+                    Risiko Tinggi
+
+                </h6>
+
+                <h2 class="fw-bold text-danger">
+
+                    {{ \App\Models\Country::where('risk_level','High')->count() }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+
+                    Rata-rata Skor Risiko
+
+                </h6>
+
+                <h2 class="fw-bold text-warning">
+
+                    {{ number_format(\App\Models\Country::avg('risk_score'),1) }}
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h6 class="text-muted">
+
+                    Total GDP
+
+                </h6>
+
+                <h5 class="fw-bold text-success">
+
+                    {{ number_format(\App\Models\Country::sum('gdp'),0) }}
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
     <div class="card dashboard-card">
 
         <div class="card-body">
 
-            <div class="row mb-3">
+            <table class="table table-hover align-middle">
 
-                <div class="col-md-4">
+                <thead class="table-light">
 
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Cari Negara...">
+                    <tr>
 
-                </div>
+                        <th>No</th>
 
-            </div>
+                        <th>Bendera</th>
 
-            <table class="table table-hover">
+                        <th>Nama Negara</th>
 
-                <thead>
+                        <th>Skor Risiko</th>
 
-                <tr>
+                        <th>Mata Uang</th>
 
-                    <th>No</th>
+                        <th>Cuaca</th>
 
-                    <th>Flag</th>
+                        <th class="text-center">Aksi</th>
 
-                    <th>Country</th>
-
-                    <th>Risk</th>
-
-                    <th>Currency</th>
-
-                    <th>Weather</th>
-
-                    <th>Action</th>
-
-                </tr>
+                    </tr>
 
                 </thead>
 
                 <tbody>
 
-                <tr>
+                    @forelse($countries as $country)
 
-                    <td>1</td>
+                    <tr>
 
-                    <td>🇮🇩</td>
+                        <td>{{ $loop->iteration }}</td>
 
-                    <td>Indonesia</td>
+                        <td style="font-size:22px;">🌍</td>
 
-                    <td>
-                        <span class="badge bg-warning">
-                            45
-                        </span>
-                    </td>
+                        <td>
 
-                    <td>IDR</td>
+                            <strong>
 
-                    <td>30°C</td>
+                                {{ $country->country_name }}
 
-                    <td>
+                            </strong>
 
-                        <button class="btn btn-sm btn-primary">
+                        </td>
 
-                            Edit
+                        <td>
 
-                        </button>
+                            @php
 
-                        <button class="btn btn-sm btn-danger">
+                                $badge='bg-success';
 
-                            Delete
+                                if($country->risk_level=='Medium'){
+                                    $badge='bg-warning text-dark';
+                                }
 
-                        </button>
+                                if($country->risk_level=='High'){
+                                    $badge='bg-danger';
+                                }
 
-                    </td>
+                            @endphp
 
-                </tr>
+                            <span class="badge {{ $badge }}">
 
-                <tr>
+                                {{ number_format($country->risk_score,0) }}
 
-                    <td>2</td>
+                            </span>
 
-                    <td>🇨🇳</td>
+                        </td>
 
-                    <td>China</td>
+                        <td>
 
-                    <td>
+                            {{ $country->currency }}
 
-                        <span class="badge bg-danger">
+                        </td>
 
-                            76
+                        <td>
 
-                        </span>
+                            <strong>
 
-                    </td>
+                                {{ $country->temperature }}°C
 
-                    <td>CNY</td>
+                            </strong>
 
-                    <td>27°C</td>
+                            <br>
 
-                    <td>
+                            <small class="text-muted">
 
-                        <button class="btn btn-sm btn-primary">
+                                {{ $country->weather }}
 
-                            Edit
+                            </small>
 
-                        </button>
+                        </td>
 
-                        <button class="btn btn-sm btn-danger">
+                        <td class="text-center">
 
-                            Delete
+                            <a href="{{ route('countries.show',$country->id) }}"
+                               class="btn btn-info btn-sm">
 
-                        </button>
+                                <i class="bi bi-eye"></i>
 
-                    </td>
+                                Detail
 
-                </tr>
+                            </a>
 
-                <tr>
+                            <a href="{{ route('countries.edit',$country->id) }}"
+                               class="btn btn-warning btn-sm">
 
-                    <td>3</td>
+                                <i class="bi bi-pencil-square"></i>
 
-                    <td>🇯🇵</td>
+                                Ubah
 
-                    <td>Japan</td>
+                            </a>
 
-                    <td>
+                            <form action="{{ route('countries.destroy',$country->id) }}"
+                                  method="POST"
+                                  class="delete-form d-inline">
 
-                        <span class="badge bg-success">
+                                @csrf
+                                @method('DELETE')
 
-                            22
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger btn-sm">
 
-                        </span>
+                                    <i class="bi bi-trash"></i>
 
-                    </td>
+                                    Hapus
 
-                    <td>JPY</td>
+                                </button>
 
-                    <td>24°C</td>
+                            </form>
 
-                    <td>
+                        </td>
 
-                        <button class="btn btn-sm btn-primary">
+                    </tr>
 
-                            Edit
+                    @empty
 
-                        </button>
+                    <tr>
 
-                        <button class="btn btn-sm btn-danger">
+                        <td colspan="7" class="text-center py-5">
 
-                            Delete
+                            <i class="bi bi-database fs-1 text-secondary"></i>
 
-                        </button>
+                            <br><br>
 
-                    </td>
+                            Belum ada data negara.
 
-                </tr>
+                        </td>
+
+                    </tr>
+
+                    @endforelse
 
                 </tbody>
 
             </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+
+                <small class="text-muted">
+
+                    Menampilkan
+
+                    {{ $countries->firstItem() ?? 0 }}
+
+                    sampai
+
+                    {{ $countries->lastItem() ?? 0 }}
+
+                    dari
+
+                    {{ $countries->total() }}
+
+                    data.
+
+                </small>
+
+                <div>
+
+                    {{ $countries->links('pagination::bootstrap-5') }}
+
+                </div>
+
+            </div>
 
         </div>
 

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WatchlistController extends Controller
+class BeritaController extends Controller
 {
     public function index()
     {
-        return view('watchlist.index');
+        return view('news.index');
     }
 }

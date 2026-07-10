@@ -1,41 +1,169 @@
 <div class="sidebar">
 
-    <div class="logo text-center py-4">
-        <h4 class="fw-bold text-white">
-            🌍 GSC Risk
+    <!-- Logo -->
+    <div class="logo text-center py-4 border-bottom">
+
+        <h4 class="fw-bold text-white mb-1">
+            🌍 SIMRPG
         </h4>
+
+        <small class="text-light">
+            Sistem Monitoring Risiko Global
+        </small>
+
     </div>
 
+    <!-- Admin -->
+    <div class="sidebar-footer p-3 border-bottom">
+
+        <div class="fw-bold text-white">
+
+            Administrator
+
+        </div>
+
+        <small class="text-light">
+
+            admin@simrpg.com
+
+        </small>
+
+    </div>
+
+    <!-- Menu -->
     <ul class="menu">
-        <div class="sidebar-footer mt-auto p-3 border-top">
 
-    <strong>Admin User</strong><br>
+        <li>
 
-    <small>admin@gscrisk.com</small>
+            <a href="{{ route('dashboard') }}">
 
-</div>
+                <i class="bi bi-speedometer2"></i>
 
-        <li><a href="/dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                Dashboard
 
-        <li><a href="/countries"><i class="bi bi-globe2"></i> Countries</a></li>
+            </a>
 
-        <li><a href="/risk"><i class="bi bi-exclamation-triangle"></i> Risk Monitoring</a></li>
+        </li>
 
-        <li><a href="/weather"><i class="bi bi-cloud-sun"></i> Weather</a></li>
+        <li>
 
-        <li><a href="/currency"><i class="bi bi-currency-exchange"></i> Currency</a></li>
+            <a href="{{ route('countries.index') }}">
 
-        <li><a href="/news"><i class="bi bi-newspaper"></i> News</a></li>
+                <i class="bi bi-globe2"></i>
 
-        <li><a href="/ports"><i class="bi bi-geo-alt"></i> Port Dashboard</a></li>
+                Dashboard Negara Global
 
-        <li><a href="/compare"><i class="bi bi-bar-chart"></i> Compare</a></li>
+            </a>
 
-        <li><a href="/watchlist"><i class="bi bi-star"></i> Watchlist</a></li>
+        </li>
 
-        <li><a href="/reports"><i class="bi bi-file-earmark-text"></i> Reports</a></li>
+        <li>
 
-        <li><a href="/admin"><i class="bi bi-person-gear"></i> Admin Panel</a></li>
+            <a href="{{ route('risk.index') }}">
+
+                <i class="bi bi-exclamation-triangle"></i>
+
+                Mesin Penilaian Risiko
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('cuaca.index') }}">
+
+                <i class="bi bi-cloud-sun"></i>
+
+                Pemantauan Cuaca Global
+
+            </a>
+
+        </li>
+
+        <li>
+
+           <a href="{{ route('nilai-tukar.index') }}">
+
+                <i class="bi bi-currency-exchange"></i>
+
+                Dashboard Nilai Tukar
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('berita.index') }}">
+
+                <i class="bi bi-newspaper"></i>
+
+                Analisis Berita
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('pelabuhan.index') }}">
+
+                <i class="bi bi-geo-alt"></i>
+
+                Dashboard Lokasi Pelabuhan
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="/visualisasi">
+
+                <i class="bi bi-bar-chart"></i>
+
+                Dashboard Visualisasi Data
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('compare.index') }}">
+
+                <i class="bi bi-columns-gap"></i>
+
+                Perbandingan Negara
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('watchlist.index') }}">
+
+                <i class="bi bi-star"></i>
+
+                Daftar Pantauan Favorit
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="{{ route('admin.index') }}">
+
+                <i class="bi bi-person-gear"></i>
+
+                Dashboard Admin
+
+            </a>
+
+        </li>
 
     </ul>
 
