@@ -1,96 +1,61 @@
 @extends('layouts.app')
 
-@section('title','Analisis Berita')
+@section('title','Berita Supply Chain')
 
 @section('content')
 
 <div class="container-fluid">
 
 <h2 class="fw-bold mb-4">
-📰 Analisis Berita
+
+📰 Berita Supply Chain
+
 </h2>
 
-<div class="row">
+@if(count($berita))
 
-<div class="col-md-4">
+@foreach($berita as $item)
 
-<div class="card shadow-sm">
-
-<div class="card-body">
-
-<h5>Kenaikan Biaya Pengiriman</h5>
-
-<p>
-
-Biaya logistik global mengalami kenaikan sebesar 5%.
-
-</p>
-
-<span class="badge bg-danger">
-
-Risiko Tinggi
-
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card shadow-sm">
+<div class="card shadow-sm mb-3">
 
 <div class="card-body">
 
-<h5>Ekspor Indonesia Meningkat</h5>
+<h5>
 
-<p>
+{{ $item['judul'] }}
 
-Nilai ekspor meningkat dibanding bulan sebelumnya.
+</h5>
 
-</p>
+<small class="text-muted">
 
-<span class="badge bg-success">
+{{ $item['tanggal'] }}
 
-Positif
+</small>
 
-</span>
+<br><br>
 
-</div>
+<a href="{{ $item['link'] }}" target="_blank"
+class="btn btn-primary btn-sm">
 
-</div>
+Baca Berita
 
-</div>
-
-<div class="col-md-4">
-
-<div class="card shadow-sm">
-
-<div class="card-body">
-
-<h5>Cuaca Ekstrem</h5>
-
-<p>
-
-Cuaca ekstrem mempengaruhi jalur distribusi barang.
-
-</p>
-
-<span class="badge bg-warning text-dark">
-
-Perhatian
-
-</span>
+</a>
 
 </div>
 
 </div>
 
-</div>
+@endforeach
+
+@else
+
+<div class="alert alert-danger">
+
+Berita tidak dapat dimuat.
 
 </div>
+
+@endif
 
 </div>
 

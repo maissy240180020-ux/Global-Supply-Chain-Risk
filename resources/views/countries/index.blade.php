@@ -33,6 +33,10 @@
 
         </form>
 
+        <a href="{{ route('countries.sync') }}" class="btn btn-success">
+    Import Data API
+</a>
+
         <a href="{{ route('countries.create') }}"
            class="btn btn-success">
 

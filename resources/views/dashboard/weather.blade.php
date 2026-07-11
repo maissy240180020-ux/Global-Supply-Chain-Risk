@@ -10,42 +10,52 @@
                 <div class="d-flex justify-content-between align-items-center">
 
                     <h6 class="fw-bold">
-
                         🌤 Ringkasan Cuaca
-
                     </h6>
 
                 </div>
 
-                <h1 class="mt-3">
+                @if($cuaca)
 
-                    29°C
+                    <h1 class="mt-3">
 
-                </h1>
+                        {{ $cuaca['temperature_2m'] }}°C
 
-                <small class="text-muted">
+                    </h1>
 
-                    Jakarta, Indonesia
+                    <small class="text-muted">
 
-                </small>
+                        Jakarta, Indonesia
 
-                <hr>
+                    </small>
 
-                <div class="d-flex justify-content-between mb-2">
+                    <hr>
 
-                    <small>Kelembapan</small>
+                    <div class="d-flex justify-content-between mb-2">
 
-                    <strong>78%</strong>
+                        <small>Kecepatan Angin</small>
 
-                </div>
+                        <strong>{{ $cuaca['wind_speed_10m'] }} km/jam</strong>
 
-                <div class="d-flex justify-content-between">
+                    </div>
 
-                    <small>Kecepatan Angin</small>
+                    <div class="d-flex justify-content-between">
 
-                    <strong>14 km/jam</strong>
+                        <small>Update</small>
 
-                </div>
+                        <strong>Realtime</strong>
+
+                    </div>
+
+                @else
+
+                    <div class="alert alert-danger">
+
+                        API Cuaca gagal diakses.
+
+                    </div>
+
+                @endif
 
             </div>
 
@@ -72,13 +82,13 @@
 
                 <h3 class="mt-3">
 
-                    Rp16.250
+                    Coming Soon
 
                 </h3>
 
                 <small class="text-success">
 
-                    USD/IDR ▲0,52%
+                    Akan menggunakan API
 
                 </small>
 
@@ -86,7 +96,7 @@
 
                 <small class="text-muted">
 
-                    Pembaruan terakhir hari ini.
+                    Realtime Exchange Rate
 
                 </small>
 
@@ -105,7 +115,7 @@
 
                 <h6 class="fw-bold">
 
-                    📰 Berita Terbaru
+                    📰 Berita
 
                 </h6>
 
@@ -113,13 +123,13 @@
 
                 <p>
 
-                    Biaya pengiriman global kembali mengalami peningkatan pada minggu ini.
+                    Akan menggunakan News API.
 
                 </p>
 
                 <small class="text-muted">
 
-                    2 jam yang lalu
+                    Realtime
 
                 </small>
 
@@ -146,31 +156,19 @@
 
                 <h4>
 
-                    Indonesia
+                    {{ $totalCountries }}
 
                 </h4>
 
                 <small>
 
-                    Produk Domestik Bruto (PDB)
+                    Total Negara
 
                 </small>
 
-                <h5>
+                <h5 class="mt-3">
 
-                    USD 1,39 Triliun
-
-                </h5>
-
-                <small>
-
-                    Skor Risiko
-
-                </small>
-
-                <h5 class="text-warning">
-
-                    45
+                    High Risk : {{ $highRisk }}
 
                 </h5>
 

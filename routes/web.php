@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApiCountryController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CountryController;
@@ -157,3 +157,9 @@ Route::get('/watchlist', [WatchlistController::class, 'index'])
 
 Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin.index');
+
+Route::get('/countries-api', [ApiCountryController::class,'index'])
+        ->name('countries.api');
+
+Route::get('/countries/import-api', [CountryController::class, 'syncApi'])
+    ->name('countries.sync');

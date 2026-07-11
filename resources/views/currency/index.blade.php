@@ -10,6 +10,8 @@
 💱 Dashboard Nilai Tukar
 </h2>
 
+@if($kurs)
+
 <div class="row">
 
 <div class="col-md-4">
@@ -18,29 +20,21 @@
 
 <div class="card-body text-center">
 
-<h6 class="text-muted">USD / IDR</h6>
+<h6 class="text-muted">
+USD → IDR
+</h6>
 
-<h2 class="text-primary">16.250</h2>
+<h2 class="text-primary">
 
-<small class="text-success">▲ 0.52%</small>
+{{ number_format($kurs['rates']['IDR'],2) }}
 
-</div>
+</h2>
 
-</div>
+<small class="text-success">
 
-</div>
+Realtime
 
-<div class="col-md-4">
-
-<div class="card shadow-sm border-0">
-
-<div class="card-body text-center">
-
-<h6 class="text-muted">EUR / IDR</h6>
-
-<h2 class="text-success">18.200</h2>
-
-<small class="text-danger">▼ 0.20%</small>
+</small>
 
 </div>
 
@@ -54,11 +48,49 @@
 
 <div class="card-body text-center">
 
-<h6 class="text-muted">JPY / IDR</h6>
+<h6 class="text-muted">
+USD → EUR
+</h6>
 
-<h2 class="text-warning">112</h2>
+<h2 class="text-success">
 
-<small class="text-success">▲ 0.10%</small>
+{{ $kurs['rates']['EUR'] }}
+
+</h2>
+
+<small>
+
+Realtime
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow-sm border-0">
+
+<div class="card-body text-center">
+
+<h6 class="text-muted">
+USD → JPY
+</h6>
+
+<h2 class="text-warning">
+
+{{ $kurs['rates']['JPY'] }}
+
+</h2>
+
+<small>
+
+Realtime
+
+</small>
 
 </div>
 
@@ -72,7 +104,7 @@
 
 <div class="card-header">
 
-Daftar Nilai Tukar
+Nilai Tukar Hari Ini
 
 </div>
 
@@ -80,59 +112,61 @@ Daftar Nilai Tukar
 
 <table class="table table-bordered">
 
-<thead>
-
 <tr>
 
-<th>Mata Uang</th>
+<th>Tanggal Update</th>
 
-<th>Nilai Tukar</th>
-
-<th>Perubahan</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>USD</td>
-
-<td>16.250</td>
-
-<td class="text-success">Naik</td>
+<td>{{ $kurs['date'] }}</td>
 
 </tr>
 
 <tr>
 
-<td>EUR</td>
+<th>Base Currency</th>
 
-<td>18.200</td>
-
-<td class="text-danger">Turun</td>
+<td>{{ $kurs['base'] }}</td>
 
 </tr>
 
 <tr>
 
-<td>JPY</td>
+<th>USD → IDR</th>
 
-<td>112</td>
-
-<td class="text-success">Naik</td>
+<td>{{ number_format($kurs['rates']['IDR'],2) }}</td>
 
 </tr>
 
-</tbody>
+<tr>
+
+<th>USD → EUR</th>
+
+<td>{{ $kurs['rates']['EUR'] }}</td>
+
+</tr>
+
+<tr>
+
+<th>USD → JPY</th>
+
+<td>{{ $kurs['rates']['JPY'] }}</td>
+
+</tr>
 
 </table>
 
 </div>
 
 </div>
+
+@else
+
+<div class="alert alert-danger">
+
+Gagal mengambil data dari Currency API.
+
+</div>
+
+@endif
 
 </div>
 

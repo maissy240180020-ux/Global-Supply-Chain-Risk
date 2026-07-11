@@ -7,12 +7,14 @@
 <div class="container-fluid">
 
     <h2 class="fw-bold mb-4">
-        🌦️ Pemantauan Cuaca
+        🌦️ Pemantauan Cuaca (Realtime)
     </h2>
+
+    @if($cuaca)
 
     <div class="row">
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="card shadow-sm border-0">
 
@@ -23,7 +25,7 @@
                     </h6>
 
                     <h2 class="text-primary">
-                        29°C
+                        {{ $cuaca['temperature_2m'] }} °C
                     </h2>
 
                     <small>
@@ -36,27 +38,7 @@
 
         </div>
 
-        <div class="col-md-3">
-
-            <div class="card shadow-sm border-0">
-
-                <div class="card-body text-center">
-
-                    <h6 class="text-muted">
-                        Kelembapan
-                    </h6>
-
-                    <h2 class="text-info">
-                        78%
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="card shadow-sm border-0">
 
@@ -67,7 +49,7 @@
                     </h6>
 
                     <h2 class="text-success">
-                        14 Km/Jam
+                        {{ $cuaca['wind_speed_10m'] }} km/jam
                     </h2>
 
                 </div>
@@ -76,23 +58,19 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="card shadow-sm border-0">
 
                 <div class="card-body text-center">
 
                     <h6 class="text-muted">
-                        Kondisi
+                        Arah Angin
                     </h6>
 
-                    <h2>
-                        ☀️
+                    <h2 class="text-info">
+                        {{ $cuaca['wind_direction_10m'] }}°
                     </h2>
-
-                    <small>
-                        Cerah
-                    </small>
 
                 </div>
 
@@ -105,78 +83,53 @@
     <div class="card mt-4 shadow-sm border-0">
 
         <div class="card-header">
-
-            Prakiraan Cuaca Hari Ini
-
+            Informasi Cuaca Realtime
         </div>
 
         <div class="card-body">
 
             <table class="table table-bordered">
 
-                <thead class="table-light">
+                <tr>
+                    <th>Kota</th>
+                    <td>Jakarta</td>
+                </tr>
 
-                    <tr>
+                <tr>
+                    <th>Suhu</th>
+                    <td>{{ $cuaca['temperature_2m'] }} °C</td>
+                </tr>
 
-                        <th>Waktu</th>
+                <tr>
+                    <th>Kecepatan Angin</th>
+                    <td>{{ $cuaca['wind_speed_10m'] }} km/jam</td>
+                </tr>
 
-                        <th>Suhu</th>
+                <tr>
+                    <th>Arah Angin</th>
+                    <td>{{ $cuaca['wind_direction_10m'] }}°</td>
+                </tr>
 
-                        <th>Kondisi</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>Pagi</td>
-
-                        <td>26°C</td>
-
-                        <td>Cerah</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Siang</td>
-
-                        <td>31°C</td>
-
-                        <td>Cerah Berawan</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Sore</td>
-
-                        <td>29°C</td>
-
-                        <td>Berawan</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Malam</td>
-
-                        <td>25°C</td>
-
-                        <td>Hujan Ringan</td>
-
-                    </tr>
-
-                </tbody>
+                <tr>
+                    <th>Update</th>
+                    <td>{{ $cuaca['time'] }}</td>
+                </tr>
 
             </table>
 
         </div>
 
     </div>
+
+    @else
+
+    <div class="alert alert-danger">
+
+        Gagal mengambil data cuaca dari API.
+
+    </div>
+
+    @endif
 
 </div>
 
