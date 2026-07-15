@@ -76,17 +76,12 @@
         @endforelse
 
         <div class="text-center mt-4">
-
             <a
-                href="{{ route('countries.index') }}"
+                href="{{ route('countries.api') }}"
                 class="btn btn-outline-primary">
-
                 <i class="bi bi-globe2"></i>
-
-                Lihat Semua Data Negara
-
+                Lihat Integrasi & API Negara
             </a>
-
         </div>
 
     </div>

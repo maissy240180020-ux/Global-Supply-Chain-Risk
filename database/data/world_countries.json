@@ -1,0 +1,4349 @@
+[
+    {
+        "name": {
+            "common": "Afghanistan"
+        },
+        "cca2": "AF",
+        "capital": [
+            "Kabul"
+        ],
+        "currencies": {
+            "AFN": {
+                "name": "AFN"
+            }
+        },
+        "population": 40000000,
+        "latlng": [
+            33.9391,
+            67.71
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/af.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Albania"
+        },
+        "cca2": "AL",
+        "capital": [
+            "Tirana"
+        ],
+        "currencies": {
+            "ALL": {
+                "name": "ALL"
+            }
+        },
+        "population": 2800000,
+        "latlng": [
+            41.1533,
+            20.1683
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/al.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Algeria"
+        },
+        "cca2": "DZ",
+        "capital": [
+            "Algiers"
+        ],
+        "currencies": {
+            "DZD": {
+                "name": "DZD"
+            }
+        },
+        "population": 44000000,
+        "latlng": [
+            28.0339,
+            1.6596
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/dz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Andorra"
+        },
+        "cca2": "AD",
+        "capital": [
+            "Andorra la Vella"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 77000,
+        "latlng": [
+            42.5063,
+            1.5218
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ad.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Angola"
+        },
+        "cca2": "AO",
+        "capital": [
+            "Luanda"
+        ],
+        "currencies": {
+            "AOA": {
+                "name": "AOA"
+            }
+        },
+        "population": 33000000,
+        "latlng": [
+            -11.2027,
+            17.8739
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ao.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Argentina"
+        },
+        "cca2": "AR",
+        "capital": [
+            "Buenos Aires"
+        ],
+        "currencies": {
+            "ARS": {
+                "name": "ARS"
+            }
+        },
+        "population": 45000000,
+        "latlng": [
+            -38.4161,
+            -63.6167
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ar.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Armenia"
+        },
+        "cca2": "AM",
+        "capital": [
+            "Yerevan"
+        ],
+        "currencies": {
+            "AMD": {
+                "name": "AMD"
+            }
+        },
+        "population": 3000000,
+        "latlng": [
+            40.0691,
+            45.0382
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/am.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Australia"
+        },
+        "cca2": "AU",
+        "capital": [
+            "Canberra"
+        ],
+        "currencies": {
+            "AUD": {
+                "name": "AUD"
+            }
+        },
+        "population": 26000000,
+        "latlng": [
+            -25.2744,
+            133.7751
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/au.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Austria"
+        },
+        "cca2": "AT",
+        "capital": [
+            "Vienna"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 9000000,
+        "latlng": [
+            47.5162,
+            14.5501
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/at.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Azerbaijan"
+        },
+        "cca2": "AZ",
+        "capital": [
+            "Baku"
+        ],
+        "currencies": {
+            "AZN": {
+                "name": "AZN"
+            }
+        },
+        "population": 10000000,
+        "latlng": [
+            40.1431,
+            47.5769
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/az.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bahamas"
+        },
+        "cca2": "BS",
+        "capital": [
+            "Nassau"
+        ],
+        "currencies": {
+            "BSD": {
+                "name": "BSD"
+            }
+        },
+        "population": 400000,
+        "latlng": [
+            25.0343,
+            -77.3963
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bs.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bahrain"
+        },
+        "cca2": "BH",
+        "capital": [
+            "Manama"
+        ],
+        "currencies": {
+            "BHD": {
+                "name": "BHD"
+            }
+        },
+        "population": 1700000,
+        "latlng": [
+            26.0667,
+            50.5577
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bh.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bangladesh"
+        },
+        "cca2": "BD",
+        "capital": [
+            "Dhaka"
+        ],
+        "currencies": {
+            "BDT": {
+                "name": "BDT"
+            }
+        },
+        "population": 165000000,
+        "latlng": [
+            23.685,
+            90.3563
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bd.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Barbados"
+        },
+        "cca2": "BB",
+        "capital": [
+            "Bridgetown"
+        ],
+        "currencies": {
+            "BBD": {
+                "name": "BBD"
+            }
+        },
+        "population": 287000,
+        "latlng": [
+            13.1939,
+            -59.5432
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bb.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Belarus"
+        },
+        "cca2": "BY",
+        "capital": [
+            "Minsk"
+        ],
+        "currencies": {
+            "BYN": {
+                "name": "BYN"
+            }
+        },
+        "population": 9400000,
+        "latlng": [
+            53.7098,
+            27.9534
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/by.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Belgium"
+        },
+        "cca2": "BE",
+        "capital": [
+            "Brussels"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 11500000,
+        "latlng": [
+            50.8503,
+            4.3517
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/be.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Belize"
+        },
+        "cca2": "BZ",
+        "capital": [
+            "Belmopan"
+        ],
+        "currencies": {
+            "BZD": {
+                "name": "BZD"
+            }
+        },
+        "population": 400000,
+        "latlng": [
+            17.1899,
+            -88.4976
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Benin"
+        },
+        "cca2": "BB",
+        "capital": [
+            "Porto-Novo"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 12000000,
+        "latlng": [
+            9.3077,
+            2.3158
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bb.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bhutan"
+        },
+        "cca2": "BT",
+        "capital": [
+            "Thimphu"
+        ],
+        "currencies": {
+            "BTN": {
+                "name": "BTN"
+            }
+        },
+        "population": 770000,
+        "latlng": [
+            27.5142,
+            90.4336
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bolivia"
+        },
+        "cca2": "BO",
+        "capital": [
+            "Sucre"
+        ],
+        "currencies": {
+            "BOB": {
+                "name": "BOB"
+            }
+        },
+        "population": 11000000,
+        "latlng": [
+            -16.2902,
+            -63.5887
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bo.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bosnia and Herzegovina"
+        },
+        "cca2": "BA",
+        "capital": [
+            "Sarajevo"
+        ],
+        "currencies": {
+            "BAM": {
+                "name": "BAM"
+            }
+        },
+        "population": 3200000,
+        "latlng": [
+            43.9159,
+            17.6791
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ba.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Botswana"
+        },
+        "cca2": "BW",
+        "capital": [
+            "Gaborone"
+        ],
+        "currencies": {
+            "BWP": {
+                "name": "BWP"
+            }
+        },
+        "population": 2300000,
+        "latlng": [
+            -22.3285,
+            24.6849
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Brazil"
+        },
+        "cca2": "BR",
+        "capital": [
+            "Brasilia"
+        ],
+        "currencies": {
+            "BRL": {
+                "name": "BRL"
+            }
+        },
+        "population": 213000000,
+        "latlng": [
+            -14.235,
+            -51.9253
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/br.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Brunei"
+        },
+        "cca2": "BN",
+        "capital": [
+            "Bandar Seri Begawan"
+        ],
+        "currencies": {
+            "BND": {
+                "name": "BND"
+            }
+        },
+        "population": 440000,
+        "latlng": [
+            4.5353,
+            114.7277
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Bulgaria"
+        },
+        "cca2": "BG",
+        "capital": [
+            "Sofia"
+        ],
+        "currencies": {
+            "BGN": {
+                "name": "BGN"
+            }
+        },
+        "population": 6900000,
+        "latlng": [
+            42.7339,
+            25.4858
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Burkina Faso"
+        },
+        "cca2": "BF",
+        "capital": [
+            "Ouagadougou"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 21000000,
+        "latlng": [
+            12.2383,
+            -1.5616
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bf.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Burundi"
+        },
+        "cca2": "BI",
+        "capital": [
+            "Gitega"
+        ],
+        "currencies": {
+            "BIF": {
+                "name": "BIF"
+            }
+        },
+        "population": 12000000,
+        "latlng": [
+            -3.3731,
+            29.9189
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/bi.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Cambodia"
+        },
+        "cca2": "KH",
+        "capital": [
+            "Phnom Penh"
+        ],
+        "currencies": {
+            "KHR": {
+                "name": "KHR"
+            }
+        },
+        "population": 16700000,
+        "latlng": [
+            12.5657,
+            104.991
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kh.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Cameroon"
+        },
+        "cca2": "CM",
+        "capital": [
+            "Yaounde"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 27000000,
+        "latlng": [
+            7.3697,
+            12.3547
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Canada"
+        },
+        "cca2": "CA",
+        "capital": [
+            "Ottawa"
+        ],
+        "currencies": {
+            "CAD": {
+                "name": "CAD"
+            }
+        },
+        "population": 38000000,
+        "latlng": [
+            56.1304,
+            -106.3468
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ca.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Cape Verde"
+        },
+        "cca2": "CV",
+        "capital": [
+            "Praia"
+        ],
+        "currencies": {
+            "CVE": {
+                "name": "CVE"
+            }
+        },
+        "population": 550000,
+        "latlng": [
+            16.0021,
+            -24.0132
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cv.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Central African Republic"
+        },
+        "cca2": "CF",
+        "capital": [
+            "Bangui"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 4800000,
+        "latlng": [
+            6.6111,
+            20.9394
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cf.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Chad"
+        },
+        "cca2": "TD",
+        "capital": [
+            "N'Djamena"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 16000000,
+        "latlng": [
+            15.4542,
+            18.7322
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/td.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Chile"
+        },
+        "cca2": "CL",
+        "capital": [
+            "Santiago"
+        ],
+        "currencies": {
+            "CLP": {
+                "name": "CLP"
+            }
+        },
+        "population": 19000000,
+        "latlng": [
+            -35.6751,
+            -71.543
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cl.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "China"
+        },
+        "cca2": "CN",
+        "capital": [
+            "Beijing"
+        ],
+        "currencies": {
+            "CNY": {
+                "name": "CNY"
+            }
+        },
+        "population": 1410000000,
+        "latlng": [
+            35.8617,
+            104.1954
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Colombia"
+        },
+        "cca2": "CO",
+        "capital": [
+            "Bogota"
+        ],
+        "currencies": {
+            "COP": {
+                "name": "COP"
+            }
+        },
+        "population": 51000000,
+        "latlng": [
+            4.5709,
+            -74.2973
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/co.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Comoros"
+        },
+        "cca2": "KM",
+        "capital": [
+            "Moroni"
+        ],
+        "currencies": {
+            "KMF": {
+                "name": "KMF"
+            }
+        },
+        "population": 870000,
+        "latlng": [
+            -11.875,
+            43.8722
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/km.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Congo"
+        },
+        "cca2": "CG",
+        "capital": [
+            "Brazzaville"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 5500000,
+        "latlng": [
+            -0.228,
+            15.8277
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Costa Rica"
+        },
+        "cca2": "CR",
+        "capital": [
+            "San Jose"
+        ],
+        "currencies": {
+            "CRC": {
+                "name": "CRC"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            9.7489,
+            -83.7534
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Croatia"
+        },
+        "cca2": "HR",
+        "capital": [
+            "Zagreb"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 4000000,
+        "latlng": [
+            45.1,
+            15.2
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/hr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Cuba"
+        },
+        "cca2": "CU",
+        "capital": [
+            "Havana"
+        ],
+        "currencies": {
+            "CUP": {
+                "name": "CUP"
+            }
+        },
+        "population": 11000000,
+        "latlng": [
+            21.5218,
+            -77.7812
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cu.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Cyprus"
+        },
+        "cca2": "CY",
+        "capital": [
+            "Nicosia"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 1200000,
+        "latlng": [
+            35.1264,
+            33.4299
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cy.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Czech Republic"
+        },
+        "cca2": "CZ",
+        "capital": [
+            "Prague"
+        ],
+        "currencies": {
+            "CZK": {
+                "name": "CZK"
+            }
+        },
+        "population": 10700000,
+        "latlng": [
+            49.8175,
+            15.473
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/cz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Denmark"
+        },
+        "cca2": "DK",
+        "capital": [
+            "Copenhagen"
+        ],
+        "currencies": {
+            "DKK": {
+                "name": "DKK"
+            }
+        },
+        "population": 5800000,
+        "latlng": [
+            56.2639,
+            9.5018
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/dk.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Djibouti"
+        },
+        "cca2": "DJ",
+        "capital": [
+            "Djibouti"
+        ],
+        "currencies": {
+            "DJF": {
+                "name": "DJF"
+            }
+        },
+        "population": 980000,
+        "latlng": [
+            11.8251,
+            42.5903
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/dj.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Dominica"
+        },
+        "cca2": "DM",
+        "capital": [
+            "Roseau"
+        ],
+        "currencies": {
+            "XCD": {
+                "name": "XCD"
+            }
+        },
+        "population": 72000,
+        "latlng": [
+            15.415,
+            -61.371
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/dm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Dominican Republic"
+        },
+        "cca2": "DO",
+        "capital": [
+            "Santo Domingo"
+        ],
+        "currencies": {
+            "DOP": {
+                "name": "DOP"
+            }
+        },
+        "population": 10800000,
+        "latlng": [
+            18.7357,
+            -70.1627
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/do.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "East Timor"
+        },
+        "cca2": "TL",
+        "capital": [
+            "Dili"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 1300000,
+        "latlng": [
+            -8.8742,
+            125.7275
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tl.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ecuador"
+        },
+        "cca2": "EC",
+        "capital": [
+            "Quito"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 17600000,
+        "latlng": [
+            -1.8312,
+            -78.1834
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ec.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Egypt"
+        },
+        "cca2": "EG",
+        "capital": [
+            "Cairo"
+        ],
+        "currencies": {
+            "EGP": {
+                "name": "EGP"
+            }
+        },
+        "population": 102000000,
+        "latlng": [
+            26.8206,
+            30.8025
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/eg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "El Salvador"
+        },
+        "cca2": "SV",
+        "capital": [
+            "San Salvador"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 6500000,
+        "latlng": [
+            13.7942,
+            -88.8965
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sv.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Equatorial Guinea"
+        },
+        "cca2": "GQ",
+        "capital": [
+            "Malabo"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 1400000,
+        "latlng": [
+            1.6508,
+            10.2679
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gq.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Eritrea"
+        },
+        "cca2": "ER",
+        "capital": [
+            "Asmara"
+        ],
+        "currencies": {
+            "ERN": {
+                "name": "ERN"
+            }
+        },
+        "population": 3500000,
+        "latlng": [
+            15.1794,
+            39.7823
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/er.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Estonia"
+        },
+        "cca2": "EE",
+        "capital": [
+            "Tallinn"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 1300000,
+        "latlng": [
+            58.5953,
+            25.0136
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ee.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Eswatini"
+        },
+        "cca2": "SZ",
+        "capital": [
+            "Mbabane"
+        ],
+        "currencies": {
+            "SZL": {
+                "name": "SZL"
+            }
+        },
+        "population": 1160000,
+        "latlng": [
+            -26.5225,
+            31.4659
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ethiopia"
+        },
+        "cca2": "ET",
+        "capital": [
+            "Addis Ababa"
+        ],
+        "currencies": {
+            "ETB": {
+                "name": "ETB"
+            }
+        },
+        "population": 115000000,
+        "latlng": [
+            9.145,
+            40.4897
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/et.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Fiji"
+        },
+        "cca2": "FJ",
+        "capital": [
+            "Suva"
+        ],
+        "currencies": {
+            "FJD": {
+                "name": "FJD"
+            }
+        },
+        "population": 900000,
+        "latlng": [
+            -17.7134,
+            178.065
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/fj.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Finland"
+        },
+        "cca2": "FI",
+        "capital": [
+            "Helsinki"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 5500000,
+        "latlng": [
+            61.9241,
+            25.7482
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/fi.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "France"
+        },
+        "cca2": "FR",
+        "capital": [
+            "Paris"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 67000000,
+        "latlng": [
+            46.2276,
+            2.2137
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/fr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Gabon"
+        },
+        "cca2": "GA",
+        "capital": [
+            "Libreville"
+        ],
+        "currencies": {
+            "XAF": {
+                "name": "XAF"
+            }
+        },
+        "population": 2200000,
+        "latlng": [
+            -0.8037,
+            11.6094
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ga.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Gambia"
+        },
+        "cca2": "GM",
+        "capital": [
+            "Banjul"
+        ],
+        "currencies": {
+            "GMD": {
+                "name": "GMD"
+            }
+        },
+        "population": 2400000,
+        "latlng": [
+            13.4432,
+            -15.3101
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Georgia"
+        },
+        "cca2": "GE",
+        "capital": [
+            "Tbilisi"
+        ],
+        "currencies": {
+            "GEL": {
+                "name": "GEL"
+            }
+        },
+        "population": 3700000,
+        "latlng": [
+            42.3154,
+            43.3569
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ge.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Germany"
+        },
+        "cca2": "DE",
+        "capital": [
+            "Berlin"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 83000000,
+        "latlng": [
+            51.1657,
+            10.4515
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/de.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ghana"
+        },
+        "cca2": "GH",
+        "capital": [
+            "Accra"
+        ],
+        "currencies": {
+            "GHS": {
+                "name": "GHS"
+            }
+        },
+        "population": 31000000,
+        "latlng": [
+            7.9465,
+            -1.0232
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gh.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Greece"
+        },
+        "cca2": "GR",
+        "capital": [
+            "Athens"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 10400000,
+        "latlng": [
+            39.0742,
+            21.8243
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Grenada"
+        },
+        "cca2": "GD",
+        "capital": [
+            "St. George's"
+        ],
+        "currencies": {
+            "XCD": {
+                "name": "XCD"
+            }
+        },
+        "population": 112000,
+        "latlng": [
+            12.1165,
+            -61.679
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gd.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Guatemala"
+        },
+        "cca2": "GT",
+        "capital": [
+            "Guatemala City"
+        ],
+        "currencies": {
+            "GTQ": {
+                "name": "GTQ"
+            }
+        },
+        "population": 18000000,
+        "latlng": [
+            15.7835,
+            -90.2308
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Guinea"
+        },
+        "cca2": "GN",
+        "capital": [
+            "Conakry"
+        ],
+        "currencies": {
+            "GNF": {
+                "name": "GNF"
+            }
+        },
+        "population": 13000000,
+        "latlng": [
+            9.9456,
+            -9.6966
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Guinea-Bissau"
+        },
+        "cca2": "GW",
+        "capital": [
+            "Bissau"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 2000000,
+        "latlng": [
+            11.8037,
+            -15.1804
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Guyana"
+        },
+        "cca2": "GY",
+        "capital": [
+            "Georgetown"
+        ],
+        "currencies": {
+            "GYD": {
+                "name": "GYD"
+            }
+        },
+        "population": 780000,
+        "latlng": [
+            4.8604,
+            -58.9302
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gy.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Haiti"
+        },
+        "cca2": "HT",
+        "capital": [
+            "Port-au-Prince"
+        ],
+        "currencies": {
+            "HTG": {
+                "name": "HTG"
+            }
+        },
+        "population": 11400000,
+        "latlng": [
+            18.9712,
+            -72.2852
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ht.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Honduras"
+        },
+        "cca2": "HN",
+        "capital": [
+            "Tegucigalpa"
+        ],
+        "currencies": {
+            "HNL": {
+                "name": "HNL"
+            }
+        },
+        "population": 10000000,
+        "latlng": [
+            15.2,
+            -86.2419
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/hn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Hungary"
+        },
+        "cca2": "HU",
+        "capital": [
+            "Budapest"
+        ],
+        "currencies": {
+            "HUF": {
+                "name": "HUF"
+            }
+        },
+        "population": 9700000,
+        "latlng": [
+            47.1625,
+            19.5033
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/hu.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Iceland"
+        },
+        "cca2": "IS",
+        "capital": [
+            "Reykjavik"
+        ],
+        "currencies": {
+            "ISK": {
+                "name": "ISK"
+            }
+        },
+        "population": 360000,
+        "latlng": [
+            64.9631,
+            -19.0208
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/is.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "India"
+        },
+        "cca2": "IN",
+        "capital": [
+            "New Delhi"
+        ],
+        "currencies": {
+            "INR": {
+                "name": "INR"
+            }
+        },
+        "population": 1390000000,
+        "latlng": [
+            20.5937,
+            78.9629
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/in.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Indonesia"
+        },
+        "cca2": "ID",
+        "capital": [
+            "Jakarta"
+        ],
+        "currencies": {
+            "IDR": {
+                "name": "IDR"
+            }
+        },
+        "population": 273000000,
+        "latlng": [
+            -0.7893,
+            113.9213
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/id.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Iran"
+        },
+        "cca2": "IR",
+        "capital": [
+            "Tehran"
+        ],
+        "currencies": {
+            "IRR": {
+                "name": "IRR"
+            }
+        },
+        "population": 84000000,
+        "latlng": [
+            32.4279,
+            53.688
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ir.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Iraq"
+        },
+        "cca2": "IQ",
+        "capital": [
+            "Baghdad"
+        ],
+        "currencies": {
+            "IQD": {
+                "name": "IQD"
+            }
+        },
+        "population": 40000000,
+        "latlng": [
+            33.2232,
+            43.6793
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/iq.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ireland"
+        },
+        "cca2": "IE",
+        "capital": [
+            "Dublin"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            53.4129,
+            -8.2439
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ie.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Israel"
+        },
+        "cca2": "IL",
+        "capital": [
+            "Jerusalem"
+        ],
+        "currencies": {
+            "ILS": {
+                "name": "ILS"
+            }
+        },
+        "population": 9200000,
+        "latlng": [
+            31.0461,
+            34.8516
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/il.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Italy"
+        },
+        "cca2": "IT",
+        "capital": [
+            "Rome"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 60000000,
+        "latlng": [
+            41.8719,
+            12.5674
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/it.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ivory Coast"
+        },
+        "cca2": "CI",
+        "capital": [
+            "Yamoussoukro"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 26000000,
+        "latlng": [
+            7.54,
+            -5.5471
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ci.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Jamaica"
+        },
+        "cca2": "JM",
+        "capital": [
+            "Kingston"
+        ],
+        "currencies": {
+            "JMD": {
+                "name": "JMD"
+            }
+        },
+        "population": 2900000,
+        "latlng": [
+            18.1096,
+            -77.2975
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/jm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Japan"
+        },
+        "cca2": "JP",
+        "capital": [
+            "Tokyo"
+        ],
+        "currencies": {
+            "JPY": {
+                "name": "JPY"
+            }
+        },
+        "population": 126000000,
+        "latlng": [
+            36.2048,
+            138.2529
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/jp.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Jordan"
+        },
+        "cca2": "JO",
+        "capital": [
+            "Amman"
+        ],
+        "currencies": {
+            "JOD": {
+                "name": "JOD"
+            }
+        },
+        "population": 10000000,
+        "latlng": [
+            30.5852,
+            36.2384
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/jo.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Kazakhstan"
+        },
+        "cca2": "KZ",
+        "capital": [
+            "Astana"
+        ],
+        "currencies": {
+            "KZT": {
+                "name": "KZT"
+            }
+        },
+        "population": 19000000,
+        "latlng": [
+            48.0196,
+            66.9237
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Kenya"
+        },
+        "cca2": "KE",
+        "capital": [
+            "Nairobi"
+        ],
+        "currencies": {
+            "KES": {
+                "name": "KES"
+            }
+        },
+        "population": 53000000,
+        "latlng": [
+            -0.0236,
+            37.9062
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ke.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Kiribati"
+        },
+        "cca2": "KI",
+        "capital": [
+            "South Tarawa"
+        ],
+        "currencies": {
+            "AUD": {
+                "name": "AUD"
+            }
+        },
+        "population": 119000,
+        "latlng": [
+            -3.3704,
+            168.734
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ki.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Kuwait"
+        },
+        "cca2": "KW",
+        "capital": [
+            "Kuwait City"
+        ],
+        "currencies": {
+            "KWD": {
+                "name": "KWD"
+            }
+        },
+        "population": 4200000,
+        "latlng": [
+            29.3117,
+            47.4818
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Kyrgyzstan"
+        },
+        "cca2": "KG",
+        "capital": [
+            "Bishkek"
+        ],
+        "currencies": {
+            "KGS": {
+                "name": "KGS"
+            }
+        },
+        "population": 6600000,
+        "latlng": [
+            41.2044,
+            74.7661
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Laos"
+        },
+        "cca2": "LA",
+        "capital": [
+            "Vientiane"
+        ],
+        "currencies": {
+            "LAK": {
+                "name": "LAK"
+            }
+        },
+        "population": 7200000,
+        "latlng": [
+            19.8563,
+            102.4955
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/la.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Latvia"
+        },
+        "cca2": "LV",
+        "capital": [
+            "Riga"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 1900000,
+        "latlng": [
+            56.8796,
+            24.6032
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lv.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Lebanon"
+        },
+        "cca2": "LB",
+        "capital": [
+            "Beirut"
+        ],
+        "currencies": {
+            "LBP": {
+                "name": "LBP"
+            }
+        },
+        "population": 6800000,
+        "latlng": [
+            33.8547,
+            35.8623
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lb.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Lesotho"
+        },
+        "cca2": "LS",
+        "capital": [
+            "Maseru"
+        ],
+        "currencies": {
+            "LSL": {
+                "name": "LSL"
+            }
+        },
+        "population": 2100000,
+        "latlng": [
+            -29.61,
+            28.2336
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ls.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Liberia"
+        },
+        "cca2": "LR",
+        "capital": [
+            "Monrovia"
+        ],
+        "currencies": {
+            "LRD": {
+                "name": "LRD"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            6.4281,
+            -9.4295
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Libya"
+        },
+        "cca2": "LY",
+        "capital": [
+            "Tripoli"
+        ],
+        "currencies": {
+            "LYD": {
+                "name": "LYD"
+            }
+        },
+        "population": 6800000,
+        "latlng": [
+            26.3351,
+            17.2283
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ly.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Liechtenstein"
+        },
+        "cca2": "LI",
+        "capital": [
+            "Vaduz"
+        ],
+        "currencies": {
+            "CHF": {
+                "name": "CHF"
+            }
+        },
+        "population": 38000,
+        "latlng": [
+            47.166,
+            9.5554
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/li.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Lithuania"
+        },
+        "cca2": "LT",
+        "capital": [
+            "Vilnius"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 2800000,
+        "latlng": [
+            55.1694,
+            23.8813
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Luxembourg"
+        },
+        "cca2": "LU",
+        "capital": [
+            "Luxembourg City"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 630000,
+        "latlng": [
+            49.8153,
+            6.1296
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lu.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Madagascar"
+        },
+        "cca2": "MG",
+        "capital": [
+            "Antananarivo"
+        ],
+        "currencies": {
+            "MGA": {
+                "name": "MGA"
+            }
+        },
+        "population": 27000000,
+        "latlng": [
+            -18.7669,
+            46.8691
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Malawi"
+        },
+        "cca2": "MW",
+        "capital": [
+            "Lilongwe"
+        ],
+        "currencies": {
+            "MWK": {
+                "name": "MWK"
+            }
+        },
+        "population": 19000000,
+        "latlng": [
+            -13.2543,
+            34.3015
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Malaysia"
+        },
+        "cca2": "MY",
+        "capital": [
+            "Kuala Lumpur"
+        ],
+        "currencies": {
+            "MYR": {
+                "name": "MYR"
+            }
+        },
+        "population": 32000000,
+        "latlng": [
+            4.2105,
+            101.9758
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/my.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Maldives"
+        },
+        "cca2": "MV",
+        "capital": [
+            "Male"
+        ],
+        "currencies": {
+            "MVR": {
+                "name": "MVR"
+            }
+        },
+        "population": 540000,
+        "latlng": [
+            3.2028,
+            73.2207
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mv.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mali"
+        },
+        "cca2": "ML",
+        "capital": [
+            "Bamako"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 20000000,
+        "latlng": [
+            17.5707,
+            -3.9962
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ml.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Malta"
+        },
+        "cca2": "MT",
+        "capital": [
+            "Valletta"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 500000,
+        "latlng": [
+            35.9375,
+            14.3754
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Marshall Islands"
+        },
+        "cca2": "MH",
+        "capital": [
+            "Majuro"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 59000,
+        "latlng": [
+            7.1315,
+            171.1845
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mh.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mauritania"
+        },
+        "cca2": "MR",
+        "capital": [
+            "Nouakchott"
+        ],
+        "currencies": {
+            "MRU": {
+                "name": "MRU"
+            }
+        },
+        "population": 4600000,
+        "latlng": [
+            21.0079,
+            -10.9408
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mauritius"
+        },
+        "cca2": "MU",
+        "capital": [
+            "Port Louis"
+        ],
+        "currencies": {
+            "MUR": {
+                "name": "MUR"
+            }
+        },
+        "population": 1200000,
+        "latlng": [
+            -20.3484,
+            57.5522
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mu.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mexico"
+        },
+        "cca2": "MX",
+        "capital": [
+            "Mexico City"
+        ],
+        "currencies": {
+            "MXN": {
+                "name": "MXN"
+            }
+        },
+        "population": 128000000,
+        "latlng": [
+            23.6345,
+            -102.5528
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mx.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Micronesia"
+        },
+        "cca2": "FM",
+        "capital": [
+            "Palikir"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 115000,
+        "latlng": [
+            7.4256,
+            150.5508
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/fm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Moldova"
+        },
+        "cca2": "MD",
+        "capital": [
+            "Chisinau"
+        ],
+        "currencies": {
+            "MDL": {
+                "name": "MDL"
+            }
+        },
+        "population": 2600000,
+        "latlng": [
+            47.4116,
+            28.3699
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/md.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Monaco"
+        },
+        "cca2": "MC",
+        "capital": [
+            "Monaco"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 39000,
+        "latlng": [
+            43.7384,
+            7.4246
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mc.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mongolia"
+        },
+        "cca2": "MN",
+        "capital": [
+            "Ulaanbaatar"
+        ],
+        "currencies": {
+            "MNT": {
+                "name": "MNT"
+            }
+        },
+        "population": 3200000,
+        "latlng": [
+            46.8625,
+            103.8467
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Montenegro"
+        },
+        "cca2": "ME",
+        "capital": [
+            "Podgorica"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 620000,
+        "latlng": [
+            42.7087,
+            19.3744
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/me.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Morocco"
+        },
+        "cca2": "MA",
+        "capital": [
+            "Rabat"
+        ],
+        "currencies": {
+            "MAD": {
+                "name": "MAD"
+            }
+        },
+        "population": 37000000,
+        "latlng": [
+            31.7917,
+            -7.0926
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ma.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Mozambique"
+        },
+        "cca2": "MZ",
+        "capital": [
+            "Maputo"
+        ],
+        "currencies": {
+            "MZN": {
+                "name": "MZN"
+            }
+        },
+        "population": 31000000,
+        "latlng": [
+            -18.6657,
+            35.5296
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Myanmar"
+        },
+        "cca2": "MM",
+        "capital": [
+            "Naypyidaw"
+        ],
+        "currencies": {
+            "MMK": {
+                "name": "MMK"
+            }
+        },
+        "population": 54000000,
+        "latlng": [
+            21.9162,
+            95.956
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Namibia"
+        },
+        "cca2": "NA",
+        "capital": [
+            "Windhoek"
+        ],
+        "currencies": {
+            "NAD": {
+                "name": "NAD"
+            }
+        },
+        "population": 2500000,
+        "latlng": [
+            -22.9576,
+            18.4904
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/na.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Nauru"
+        },
+        "cca2": "NR",
+        "capital": [
+            "Yaren"
+        ],
+        "currencies": {
+            "AUD": {
+                "name": "AUD"
+            }
+        },
+        "population": 10000,
+        "latlng": [
+            -0.5228,
+            166.9315
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/nr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Nepal"
+        },
+        "cca2": "NP",
+        "capital": [
+            "Kathmandu"
+        ],
+        "currencies": {
+            "NPR": {
+                "name": "NPR"
+            }
+        },
+        "population": 29000000,
+        "latlng": [
+            28.3949,
+            84.124
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/np.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Netherlands"
+        },
+        "cca2": "NL",
+        "capital": [
+            "Amsterdam"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 17000000,
+        "latlng": [
+            52.1326,
+            5.2913
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/nl.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "New Zealand"
+        },
+        "cca2": "NZ",
+        "capital": [
+            "Wellington"
+        ],
+        "currencies": {
+            "NZD": {
+                "name": "NZD"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            -40.9006,
+            174.886
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/nz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Nicaragua"
+        },
+        "cca2": "NI",
+        "capital": [
+            "Managua"
+        ],
+        "currencies": {
+            "NIO": {
+                "name": "NIO"
+            }
+        },
+        "population": 6600000,
+        "latlng": [
+            12.8654,
+            -85.2072
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ni.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Niger"
+        },
+        "cca2": "NE",
+        "capital": [
+            "Niamey"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 24000000,
+        "latlng": [
+            17.6078,
+            8.0817
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ne.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Nigeria"
+        },
+        "cca2": "NG",
+        "capital": [
+            "Abuja"
+        ],
+        "currencies": {
+            "NGN": {
+                "name": "NGN"
+            }
+        },
+        "population": 206000000,
+        "latlng": [
+            9.082,
+            8.6753
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ng.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "North Korea"
+        },
+        "cca2": "KP",
+        "capital": [
+            "Pyongyang"
+        ],
+        "currencies": {
+            "KPW": {
+                "name": "KPW"
+            }
+        },
+        "population": 25000000,
+        "latlng": [
+            40.3399,
+            127.5101
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kp.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "North Macedonia"
+        },
+        "cca2": "MK",
+        "capital": [
+            "Skopje"
+        ],
+        "currencies": {
+            "MKD": {
+                "name": "MKD"
+            }
+        },
+        "population": 2000000,
+        "latlng": [
+            41.6086,
+            21.7453
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/mk.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Norway"
+        },
+        "cca2": "NO",
+        "capital": [
+            "Oslo"
+        ],
+        "currencies": {
+            "NOK": {
+                "name": "NOK"
+            }
+        },
+        "population": 5400000,
+        "latlng": [
+            60.472,
+            8.4689
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/no.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Oman"
+        },
+        "cca2": "OM",
+        "capital": [
+            "Muscat"
+        ],
+        "currencies": {
+            "OMR": {
+                "name": "OMR"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            21.5126,
+            55.9233
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/om.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Pakistan"
+        },
+        "cca2": "PK",
+        "capital": [
+            "Islamabad"
+        ],
+        "currencies": {
+            "PKR": {
+                "name": "PKR"
+            }
+        },
+        "population": 220000000,
+        "latlng": [
+            30.3753,
+            69.3451
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pk.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Palau"
+        },
+        "cca2": "PW",
+        "capital": [
+            "Ngerulmud"
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 18000,
+        "latlng": [
+            7.515,
+            134.5825
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Palestine"
+        },
+        "cca2": "PS",
+        "capital": [
+            "Ramallah"
+        ],
+        "currencies": {
+            "ILS": {
+                "name": "ILS"
+            }
+        },
+        "population": 5000000,
+        "latlng": [
+            31.9522,
+            35.2332
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ps.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Panama"
+        },
+        "cca2": "PA",
+        "capital": [
+            "Panama City"
+        ],
+        "currencies": {
+            "PAB": {
+                "name": "PAB"
+            }
+        },
+        "population": 4300000,
+        "latlng": [
+            8.538,
+            -80.7821
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pa.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Papua New Guinea"
+        },
+        "cca2": "PG",
+        "capital": [
+            "Port Moresby"
+        ],
+        "currencies": {
+            "PGK": {
+                "name": "PGK"
+            }
+        },
+        "population": 9000000,
+        "latlng": [
+            -6.315,
+            143.9555
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Paraguay"
+        },
+        "cca2": "PY",
+        "capital": [
+            "Asuncion"
+        ],
+        "currencies": {
+            "PYG": {
+                "name": "PYG"
+            }
+        },
+        "population": 7000000,
+        "latlng": [
+            -23.4425,
+            -58.4438
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/py.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Peru"
+        },
+        "cca2": "PE",
+        "capital": [
+            "Lima"
+        ],
+        "currencies": {
+            "PEN": {
+                "name": "PEN"
+            }
+        },
+        "population": 33000000,
+        "latlng": [
+            -9.19,
+            -75.0152
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pe.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Philippines"
+        },
+        "cca2": "PH",
+        "capital": [
+            "Manila"
+        ],
+        "currencies": {
+            "PHP": {
+                "name": "PHP"
+            }
+        },
+        "population": 110000000,
+        "latlng": [
+            12.8797,
+            121.774
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ph.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Poland"
+        },
+        "cca2": "PL",
+        "capital": [
+            "Warsaw"
+        ],
+        "currencies": {
+            "PLN": {
+                "name": "PLN"
+            }
+        },
+        "population": 3800000,
+        "latlng": [
+            51.9194,
+            19.1451
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pl.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Portugal"
+        },
+        "cca2": "PT",
+        "capital": [
+            "Lisbon"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 10000000,
+        "latlng": [
+            39.3999,
+            -8.2245
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/pt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Qatar"
+        },
+        "cca2": "QA",
+        "capital": [
+            "Doha"
+        ],
+        "currencies": {
+            "QAR": {
+                "name": "QAR"
+            }
+        },
+        "population": 2800000,
+        "latlng": [
+            25.3548,
+            51.1839
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/qa.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Romania"
+        },
+        "cca2": "RO",
+        "capital": [
+            "Bucharest"
+        ],
+        "currencies": {
+            "RON": {
+                "name": "RON"
+            }
+        },
+        "population": 19000000,
+        "latlng": [
+            45.9432,
+            24.9668
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ro.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Russia"
+        },
+        "cca2": "RU",
+        "capital": [
+            "Moscow"
+        ],
+        "currencies": {
+            "RUB": {
+                "name": "RUB"
+            }
+        },
+        "population": 144000000,
+        "latlng": [
+            61.524,
+            105.3188
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ru.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Rwanda"
+        },
+        "cca2": "RW",
+        "capital": [
+            "Kigali"
+        ],
+        "currencies": {
+            "RWF": {
+                "name": "RWF"
+            }
+        },
+        "population": 13000000,
+        "latlng": [
+            -1.9403,
+            29.8739
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/rw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Samoa"
+        },
+        "cca2": "WS",
+        "capital": [
+            "Apia"
+        ],
+        "currencies": {
+            "WST": {
+                "name": "WST"
+            }
+        },
+        "population": 200000,
+        "latlng": [
+            -13.759,
+            -172.1046
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ws.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "San Marino"
+        },
+        "cca2": "SM",
+        "capital": [
+            "San Marino"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 34000,
+        "latlng": [
+            43.9424,
+            12.4578
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Saudi Arabia"
+        },
+        "cca2": "SA",
+        "capital": [
+            "Riyadh"
+        ],
+        "currencies": {
+            "SAR": {
+                "name": "SAR"
+            }
+        },
+        "population": 35000000,
+        "latlng": [
+            23.8859,
+            45.0792
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sa.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Senegal"
+        },
+        "cca2": "SN",
+        "capital": [
+            "Dakar"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 16000000,
+        "latlng": [
+            14.4974,
+            -14.4524
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Serbia"
+        },
+        "cca2": "RS",
+        "capital": [
+            "Belgrade"
+        ],
+        "currencies": {
+            "RSD": {
+                "name": "RSD"
+            }
+        },
+        "population": 6900000,
+        "latlng": [
+            44.0165,
+            21.0059
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/rs.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Seychelles"
+        },
+        "cca2": "SC",
+        "capital": [
+            "Victoria"
+        ],
+        "currencies": {
+            "SCR": {
+                "name": "SCR"
+            }
+        },
+        "population": 98000,
+        "latlng": [
+            -4.6796,
+            55.492
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sc.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Sierra Leone"
+        },
+        "cca2": "SL",
+        "capital": [
+            "Freetown"
+        ],
+        "currencies": {
+            "SLL": {
+                "name": "SLL"
+            }
+        },
+        "population": 8000000,
+        "latlng": [
+            8.4606,
+            -11.7799
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sl.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Singapore"
+        },
+        "cca2": "SG",
+        "capital": [
+            "Singapore"
+        ],
+        "currencies": {
+            "SGD": {
+                "name": "SGD"
+            }
+        },
+        "population": 5700000,
+        "latlng": [
+            1.3521,
+            103.8198
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Slovakia"
+        },
+        "cca2": "SK",
+        "capital": [
+            "Bratislava"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 5400000,
+        "latlng": [
+            48.669,
+            19.699
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sk.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Slovenia"
+        },
+        "cca2": "SI",
+        "capital": [
+            "Ljubljana"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 2100000,
+        "latlng": [
+            46.1512,
+            14.9955
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/si.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Somalia"
+        },
+        "cca2": "SO",
+        "capital": [
+            "Mogadishu"
+        ],
+        "currencies": {
+            "SOS": {
+                "name": "SOS"
+            }
+        },
+        "population": 16000000,
+        "latlng": [
+            5.1521,
+            46.1996
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/so.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "South Africa"
+        },
+        "cca2": "ZA",
+        "capital": [
+            "Pretoria"
+        ],
+        "currencies": {
+            "ZAR": {
+                "name": "ZAR"
+            }
+        },
+        "population": 59000000,
+        "latlng": [
+            -30.5595,
+            22.9375
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/za.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "South Korea"
+        },
+        "cca2": "KR",
+        "capital": [
+            "Seoul"
+        ],
+        "currencies": {
+            "KRW": {
+                "name": "KRW"
+            }
+        },
+        "population": 51000000,
+        "latlng": [
+            35.9078,
+            127.7669
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/kr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "South Sudan"
+        },
+        "cca2": "SS",
+        "capital": [
+            "Juba"
+        ],
+        "currencies": {
+            "SSP": {
+                "name": "SSP"
+            }
+        },
+        "population": 11000000,
+        "latlng": [
+            6.877,
+            31.307
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ss.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Spain"
+        },
+        "cca2": "ES",
+        "capital": [
+            "Madrid"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 47000000,
+        "latlng": [
+            40.4637,
+            -3.7492
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/es.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Sri Lanka"
+        },
+        "cca2": "LK",
+        "capital": [
+            "Sri Jayawardenepura Kotte"
+        ],
+        "currencies": {
+            "LKR": {
+                "name": "LKR"
+            }
+        },
+        "population": 22000000,
+        "latlng": [
+            7.8731,
+            80.7718
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/lk.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Sudan"
+        },
+        "cca2": "SD",
+        "capital": [
+            "Khartoum"
+        ],
+        "currencies": {
+            "SDG": {
+                "name": "SDG"
+            }
+        },
+        "population": 43000000,
+        "latlng": [
+            12.8628,
+            30.2176
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sd.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Suriname"
+        },
+        "cca2": "SR",
+        "capital": [
+            "Paramaribo"
+        ],
+        "currencies": {
+            "SRD": {
+                "name": "SRD"
+            }
+        },
+        "population": 590000,
+        "latlng": [
+            3.9193,
+            -56.0278
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Sweden"
+        },
+        "cca2": "SE",
+        "capital": [
+            "Stockholm"
+        ],
+        "currencies": {
+            "SEK": {
+                "name": "SEK"
+            }
+        },
+        "population": 10000000,
+        "latlng": [
+            60.1282,
+            18.6435
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/se.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Switzerland"
+        },
+        "cca2": "CH",
+        "capital": [
+            "Bern"
+        ],
+        "currencies": {
+            "CHF": {
+                "name": "CHF"
+            }
+        },
+        "population": 8600000,
+        "latlng": [
+            46.8182,
+            8.2275
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ch.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Syria"
+        },
+        "cca2": "SY",
+        "capital": [
+            "Damascus"
+        ],
+        "currencies": {
+            "SYP": {
+                "name": "SYP"
+            }
+        },
+        "population": 17500000,
+        "latlng": [
+            34.8021,
+            38.9968
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/sy.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Taiwan"
+        },
+        "cca2": "TW",
+        "capital": [
+            "Taipei"
+        ],
+        "currencies": {
+            "TWD": {
+                "name": "TWD"
+            }
+        },
+        "population": 23500000,
+        "latlng": [
+            23.6978,
+            120.9605
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tw.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Tajikistan"
+        },
+        "cca2": "TJ",
+        "capital": [
+            "Dushanbe"
+        ],
+        "currencies": {
+            "TJS": {
+                "name": "TJS"
+            }
+        },
+        "population": 9500000,
+        "latlng": [
+            38.861,
+            71.2761
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tj.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Tanzania"
+        },
+        "cca2": "TZ",
+        "capital": [
+            "Dodoma"
+        ],
+        "currencies": {
+            "TZS": {
+                "name": "TZS"
+            }
+        },
+        "population": 59000000,
+        "latlng": [
+            -6.369,
+            34.8888
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Thailand"
+        },
+        "cca2": "TH",
+        "capital": [
+            "Bangkok"
+        ],
+        "currencies": {
+            "THB": {
+                "name": "THB"
+            }
+        },
+        "population": 69000000,
+        "latlng": [
+            15.87,
+            100.9925
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/th.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Togo"
+        },
+        "cca2": "TG",
+        "capital": [
+            "Lome"
+        ],
+        "currencies": {
+            "XOF": {
+                "name": "XOF"
+            }
+        },
+        "population": 8000000,
+        "latlng": [
+            8.6195,
+            0.8248
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tg.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Tonga"
+        },
+        "cca2": "TO",
+        "capital": [
+            "Nuku'alofa"
+        ],
+        "currencies": {
+            "TOP": {
+                "name": "TOP"
+            }
+        },
+        "population": 105000,
+        "latlng": [
+            -21.1789,
+            -175.1982
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/to.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Trinidad and Tobago"
+        },
+        "cca2": "TT",
+        "capital": [
+            "Port of Spain"
+        ],
+        "currencies": {
+            "TTD": {
+                "name": "TTD"
+            }
+        },
+        "population": 1400000,
+        "latlng": [
+            10.6918,
+            -61.2225
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tt.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Tunisia"
+        },
+        "cca2": "TN",
+        "capital": [
+            "Tunis"
+        ],
+        "currencies": {
+            "TND": {
+                "name": "TND"
+            }
+        },
+        "population": 1200000,
+        "latlng": [
+            33.8869,
+            9.5375
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Turkey"
+        },
+        "cca2": "TR",
+        "capital": [
+            "Ankara"
+        ],
+        "currencies": {
+            "TRY": {
+                "name": "TRY"
+            }
+        },
+        "population": 84000000,
+        "latlng": [
+            38.9637,
+            35.2433
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tr.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Turkmenistan"
+        },
+        "cca2": "TM",
+        "capital": [
+            "Ashgabat"
+        ],
+        "currencies": {
+            "TMT": {
+                "name": "TMT"
+            }
+        },
+        "population": 6000000,
+        "latlng": [
+            38.9697,
+            59.5563
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Tuvalu"
+        },
+        "cca2": "TV",
+        "capital": [
+            "Funafuti"
+        ],
+        "currencies": {
+            "AUD": {
+                "name": "AUD"
+            }
+        },
+        "population": 11000,
+        "latlng": [
+            -7.1095,
+            177.6493
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/tv.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Uganda"
+        },
+        "cca2": "UG",
+        "capital": [
+            "Kampala"
+        ],
+        "currencies": {
+            "UGX": {
+                "name": "UGX"
+            }
+        },
+        "population": 45000000,
+        "latlng": [
+            1.3733,
+            32.2903
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ug.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Ukraine"
+        },
+        "cca2": "UA",
+        "capital": [
+            "Kyiv"
+        ],
+        "currencies": {
+            "UAH": {
+                "name": "UAH"
+            }
+        },
+        "population": 44000000,
+        "latlng": [
+            48.3794,
+            31.1656
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ua.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "United Arab Emirates"
+        },
+        "cca2": "AE",
+        "capital": [
+            "Abu Dhabi"
+        ],
+        "currencies": {
+            "AED": {
+                "name": "AED"
+            }
+        },
+        "population": 9800000,
+        "latlng": [
+            23.4241,
+            53.8478
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ae.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "United Kingdom"
+        },
+        "cca2": "GB",
+        "capital": [
+            "London"
+        ],
+        "currencies": {
+            "GBP": {
+                "name": "GBP"
+            }
+        },
+        "population": 67000000,
+        "latlng": [
+            55.3781,
+            -3.436
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/gb.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "United States"
+        },
+        "cca2": "US",
+        "capital": [
+            "Washington, D.C."
+        ],
+        "currencies": {
+            "USD": {
+                "name": "USD"
+            }
+        },
+        "population": 331000000,
+        "latlng": [
+            37.0902,
+            -95.7129
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/us.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Uruguay"
+        },
+        "cca2": "UY",
+        "capital": [
+            "Montevideo"
+        ],
+        "currencies": {
+            "UYU": {
+                "name": "UYU"
+            }
+        },
+        "population": 3400000,
+        "latlng": [
+            -32.5228,
+            -55.7658
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/uy.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Uzbekistan"
+        },
+        "cca2": "UZ",
+        "capital": [
+            "Tashkent"
+        ],
+        "currencies": {
+            "UZS": {
+                "name": "UZS"
+            }
+        },
+        "population": 34000000,
+        "latlng": [
+            41.3775,
+            64.5853
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/uz.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Vanuatu"
+        },
+        "cca2": "VU",
+        "capital": [
+            "Port Vila"
+        ],
+        "currencies": {
+            "VUV": {
+                "name": "VUV"
+            }
+        },
+        "population": 300000,
+        "latlng": [
+            -15.3767,
+            166.9592
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/vu.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Vatican City"
+        },
+        "cca2": "VA",
+        "capital": [
+            "Vatican City"
+        ],
+        "currencies": {
+            "EUR": {
+                "name": "EUR"
+            }
+        },
+        "population": 800,
+        "latlng": [
+            41.9029,
+            12.4534
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/va.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Venezuela"
+        },
+        "cca2": "VE",
+        "capital": [
+            "Caracas"
+        ],
+        "currencies": {
+            "VES": {
+                "name": "VES"
+            }
+        },
+        "population": 28000000,
+        "latlng": [
+            6.4238,
+            -66.5897
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ve.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Vietnam"
+        },
+        "cca2": "VN",
+        "capital": [
+            "Hanoi"
+        ],
+        "currencies": {
+            "VND": {
+                "name": "VND"
+            }
+        },
+        "population": 97000000,
+        "latlng": [
+            14.0583,
+            108.2772
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/vn.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Yemen"
+        },
+        "cca2": "YE",
+        "capital": [
+            "Sana'a"
+        ],
+        "currencies": {
+            "YER": {
+                "name": "YER"
+            }
+        },
+        "population": 29000000,
+        "latlng": [
+            15.5527,
+            48.5164
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/ye.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Zambia"
+        },
+        "cca2": "ZM",
+        "capital": [
+            "Lusaka"
+        ],
+        "currencies": {
+            "ZMW": {
+                "name": "ZMW"
+            }
+        },
+        "population": 18000000,
+        "latlng": [
+            -13.1339,
+            27.8493
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/zm.png"
+        },
+        "unMember": true
+    },
+    {
+        "name": {
+            "common": "Zimbabwe"
+        },
+        "cca2": "ZW",
+        "capital": [
+            "Harare"
+        ],
+        "currencies": {
+            "ZWL": {
+                "name": "ZWL"
+            }
+        },
+        "population": 15000000,
+        "latlng": [
+            -19.0154,
+            29.1549
+        ],
+        "flags": {
+            "png": "https:\/\/flagcdn.com\/w320\/zw.png"
+        },
+        "unMember": true
+    }
+]

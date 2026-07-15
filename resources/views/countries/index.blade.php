@@ -33,19 +33,6 @@
 
         </form>
 
-        <a href="{{ route('countries.sync') }}" class="btn btn-success">
-    Import Data API
-</a>
-
-        <a href="{{ route('countries.create') }}"
-           class="btn btn-success">
-
-            <i class="bi bi-plus-circle"></i>
-
-            Tambah Negara
-
-        </a>
-
     </div>
 
     <div class="row mb-4">
@@ -148,6 +135,16 @@
 
 </div>
 
+    <!-- PETA LOKASI NEGARA (DROP POINTS) -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-bottom-0 pb-0 pt-3">
+            <h6 class="fw-bold mb-0">🗺️ Peta Titik Pemantauan Risiko Global (Drop Points)</h6>
+        </div>
+        <div class="card-body">
+            <div id="countriesMap" class="rounded border" style="height: 380px; z-index:1;"></div>
+        </div>
+    </div>
+
     <div class="card dashboard-card">
 
         <div class="card-body">
@@ -157,6 +154,8 @@
                 <thead class="table-light">
 
                     <tr>
+
+                        <th class="text-center" style="width: 50px;"><i class="bi bi-star-fill text-warning"></i></th>
 
                         <th>No</th>
 
@@ -182,9 +181,25 @@
 
                     <tr>
 
+                        <td class="text-center">
+                            <button class="btn btn-link p-0 toggle-favorite-btn" data-country-id="{{ $country->id }}" style="text-decoration: none; border: none; background: none;">
+                                <i class="bi {{ $country->is_favorite ? 'bi-star-fill text-warning' : 'bi-star text-muted' }} fs-5 favorite-star-icon"></i>
+                            </button>
+                        </td>
+
                         <td>{{ $loop->iteration }}</td>
 
-                        <td style="font-size:22px;">🌍</td>
+                        <td>
+
+    @if($country->flag)
+
+        <img src="{{ $country->flag }}"
+             width="45"
+             class="border rounded shadow-sm">
+
+    @endif
+
+</td>
 
                         <td>
 
@@ -255,34 +270,6 @@
 
                             </a>
 
-                            <a href="{{ route('countries.edit',$country->id) }}"
-                               class="btn btn-warning btn-sm">
-
-                                <i class="bi bi-pencil-square"></i>
-
-                                Ubah
-
-                            </a>
-
-                            <form action="{{ route('countries.destroy',$country->id) }}"
-                                  method="POST"
-                                  class="delete-form d-inline">
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button
-                                    type="submit"
-                                    class="btn btn-danger btn-sm">
-
-                                    <i class="bi bi-trash"></i>
-
-                                    Hapus
-
-                                </button>
-
-                            </form>
-
                         </td>
 
                     </tr>
@@ -339,8 +326,132 @@
 
         </div>
 
-    </div>
-
 </div>
+
+@push('styles')
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+@endpush
+
+@push('scripts')
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var map = L.map('countriesMap').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }).addTo(map);
+
+    var countries = @json($mapCountries);
+    
+    countries.forEach(function(country) {
+        if (country.latitude && country.longitude) {
+            var color = '#10b981'; // Green
+            if (country.risk_level === 'High') {
+                color = '#ef4444'; // Red
+            } else if (country.risk_level === 'Medium') {
+                color = '#f59e0b'; // Amber
+            }
+
+            var markerHtml = `
+                <div style="
+                    background-color: ${color}; 
+                    width: 14px; 
+                    height: 14px; 
+                    border-radius: 50%; 
+                    border: 2px solid white; 
+                    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+                "></div>
+            `;
+
+            var customIcon = L.divIcon({
+                html: markerHtml,
+                className: 'custom-div-icon',
+                iconSize: [14, 14],
+                iconAnchor: [7, 7]
+            });
+
+            var popupContent = `
+                <div style="font-family: inherit; font-size: 13px; line-height: 1.4; min-width: 160px;">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <img src="${country.flag}" width="22" style="border-radius: 2px; border: 1px solid #ddd;">
+                        <strong>${country.country_name}</strong>
+                    </div>
+                    <div style="font-size: 11px; margin-bottom: 2px;"><strong>Ibu Kota:</strong> ${country.capital}</div>
+                    <div style="font-size: 11px; margin-bottom: 5px;"><strong>Skor Risiko:</strong> <span class="badge text-white" style="background-color: ${color}">${country.risk_level} (${Math.round(country.risk_score)})</span></div>
+                    <div class="text-center">
+                        <a href="/dashboard?country_id=${country.id}" class="btn btn-xs btn-dark text-white text-center d-block py-1" style="font-size: 10px;">Monitor Negara</a>
+                    </div>
+                </div>
+            `;
+
+            L.marker([parseFloat(country.latitude), parseFloat(country.longitude)], { icon: customIcon })
+                .addTo(map)
+                .bindPopup(popupContent);
+        }
+    });
+
+    // AJAX Watchlist Toggle
+    document.querySelectorAll('.toggle-favorite-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const countryId = this.getAttribute('data-country-id');
+            const starIcon = this.querySelector('.favorite-star-icon');
+            
+            fetch(`/watchlist/toggle/${countryId}`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.is_favorite) {
+                        starIcon.classList.remove('bi-star', 'text-muted');
+                        starIcon.classList.add('bi-star-fill', 'text-warning');
+                        
+                        Swal.fire({
+                            title: 'Favorit!',
+                            text: `${data.country_name} ditambahkan ke daftar pantauan.`,
+                            icon: 'success',
+                            timer: 1200,
+                            showConfirmButton: false,
+                            toast: true,
+                            position: 'top-end'
+                        });
+                    } else {
+                        starIcon.classList.remove('bi-star-fill', 'text-warning');
+                        starIcon.classList.add('bi-star', 'text-muted');
+                        
+                        Swal.fire({
+                            title: 'Dihapus!',
+                            text: `${data.country_name} dihapus dari daftar pantauan.`,
+                            icon: 'info',
+                            timer: 1200,
+                            showConfirmButton: false,
+                            toast: true,
+                            position: 'top-end'
+                        });
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error toggling watchlist:', error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Gagal memperbarui status favorit.',
+                    icon: 'error'
+                });
+            });
+        });
+    });
+});
+</script>
+@endpush
 
 @endsection

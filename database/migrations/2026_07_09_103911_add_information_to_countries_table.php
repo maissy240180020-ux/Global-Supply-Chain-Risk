@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::table('countries', function (Blueprint $table) {
 
-            $table->decimal('gdp',15,2)->nullable();
+            $table->decimal('gdp',25,2)->nullable();
 
             $table->decimal('inflation',5,2)->nullable();
 

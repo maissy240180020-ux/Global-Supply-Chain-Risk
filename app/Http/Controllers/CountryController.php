@@ -28,7 +28,9 @@ class CountryController extends Controller
         ->paginate(5)
         ->withQueryString();
 
-        return view('countries.index', compact('countries'));
+        $mapCountries = Country::all();
+
+        return view('countries.index', compact('countries', 'mapCountries'));
     }
 
     // ===============================
@@ -37,7 +39,14 @@ class CountryController extends Controller
 
     public function create()
     {
-        return view('countries.create');
+        $apiCountries = (new \App\Services\CountryService)->getCountries();
+
+        // Sort alphabetically by common name
+        usort($apiCountries, function($a, $b) {
+            return strcmp($a['name']['common'] ?? '', $b['name']['common'] ?? '');
+        });
+
+        return view('countries.create', compact('apiCountries'));
     }
 
     // ===============================
@@ -61,6 +70,7 @@ class CountryController extends Controller
             // Informasi Negara
             'country_name' => $request->country_name,
             'country_code' => $request->country_code,
+            'flag'         => $request->flag,
             'capital'      => $request->capital,
 
             // Ekonomi

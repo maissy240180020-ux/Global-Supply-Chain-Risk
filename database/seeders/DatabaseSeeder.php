@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
             ]
 
         );
+        $this->call(CountrySeeder::class);
+        $this->call(LexiconSeeder::class);
+        $this->call(PortSeeder::class);
     }
 }

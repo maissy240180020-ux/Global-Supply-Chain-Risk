@@ -11,6 +11,7 @@ class Country extends Model
         // Informasi Negara
         'country_name',
         'country_code',
+        'flag',
         'capital',
 
         // Ekonomi
@@ -27,9 +28,12 @@ class Country extends Model
         'temperature',
         'weather',
 
-        // Koordinat Peta
+        // Koordinat
         'latitude',
         'longitude',
+
+        // Favorit
+        'is_favorite',
 
     ];
 }

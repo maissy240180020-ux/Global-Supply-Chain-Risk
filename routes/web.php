@@ -52,27 +52,11 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 | Data Negara
 |--------------------------------------------------------------------------
 */
-
 Route::get('/countries', [CountryController::class, 'index'])
     ->name('countries.index');
 
-Route::get('/countries/create', [CountryController::class, 'create'])
-    ->name('countries.create');
-
-Route::post('/countries', [CountryController::class, 'store'])
-    ->name('countries.store');
-
 Route::get('/countries/{country}', [CountryController::class, 'show'])
     ->name('countries.show');
-
-Route::get('/countries/{country}/edit', [CountryController::class, 'edit'])
-    ->name('countries.edit');
-
-Route::put('/countries/{country}', [CountryController::class, 'update'])
-    ->name('countries.update');
-
-Route::delete('/countries/{country}', [CountryController::class, 'destroy'])
-    ->name('countries.destroy');
 
 /*
 |--------------------------------------------------------------------------
@@ -149,6 +133,9 @@ Route::get('/pelabuhan', [PelabuhanController::class, 'index'])
 Route::get('/watchlist', [WatchlistController::class, 'index'])
     ->name('watchlist.index');
 
+Route::post('/watchlist/toggle/{country}', [WatchlistController::class, 'toggle'])
+    ->name('watchlist.toggle');
+
 /*
 |--------------------------------------------------------------------------
 | Admin
@@ -161,5 +148,15 @@ Route::get('/admin', [AdminController::class, 'index'])
 Route::get('/countries-api', [ApiCountryController::class,'index'])
         ->name('countries.api');
 
-Route::get('/countries/import-api', [CountryController::class, 'syncApi'])
-    ->name('countries.sync');
+/*
+|--------------------------------------------------------------------------
+| REST API Mahasiswa (Fitur PDF Page 9)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('api')->group(function () {
+    Route::get('/countries', [\App\Http\Controllers\WeatherController::class, 'index'])->name('api.countries');
+    Route::get('/risk', [\App\Http\Controllers\ReportController::class, 'index'])->name('api.risk');
+    Route::get('/ports', [\App\Http\Controllers\PortController::class, 'index'])->name('api.ports');
+    Route::get('/news', [\App\Http\Controllers\NewsController::class, 'index'])->name('api.news');
+    Route::get('/currency', [\App\Http\Controllers\CurrencyController::class, 'index'])->name('api.currency');
+});

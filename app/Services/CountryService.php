@@ -8,14 +8,24 @@ class CountryService
 {
     public function getCountries()
     {
-        $response = Http::get(
-            'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/country-list/records?limit=250'
-        );
+        try {
+            $response = Http::timeout(4)->get(
+                'https://restcountries.com/v3.1/all?fields=name,cca2,capital,currencies,population,latlng,flags'
+            );
 
-        if (!$response->successful()) {
-            return [];
+            if ($response->successful() && !isset($response->json()['errors'])) {
+                return $response->json();
+            }
+        } catch (\Exception $e) {
+            // Log or ignore to trigger fallback
         }
 
-        return $response->json()['results'] ?? [];
+        // Fallback ke dataset lokal yang murni berisi negara berdaulat resmi (Anggota PBB)
+        $file = database_path('data/world_countries.json');
+        if (file_exists($file)) {
+            return json_decode(file_get_contents($file), true);
+        }
+
+        return [];
     }
 }

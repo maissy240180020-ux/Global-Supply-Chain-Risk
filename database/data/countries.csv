@@ -1,0 +1,11 @@
+country_name,country_code,flag,capital,currency,population,latitude,longitude,gdp,inflation,risk_score,risk_level,temperature,weather
+Indonesia,ID,https://flagcdn.com/w320/id.png,Jakarta,IDR,275000000,-6.200000,106.816666,1319000000000,2.5,45,Medium,30,Cerah
+Germany,DE,https://flagcdn.com/w320/de.png,Berlin,EUR,83000000,52.520007,13.404954,4072000000000,1.8,22,Low,15,Hujan Ringan
+China,CN,https://flagcdn.com/w320/cn.png,Beijing,CNY,1412000000,39.904200,116.407396,17960000000000,0.2,47,Medium,22,Berawan
+Australia,AU,https://flagcdn.com/w320/au.png,Canberra,AUD,26000000,-35.2809,149.1300,1675000000000,3.6,25,Low,18,Cerah
+United States,US,https://flagcdn.com/w320/us.png,Washington D.C.,USD,333000000,38.89511,-77.03637,25460000000000,3.4,35,Low,20,Cerah
+Japan,JP,https://flagcdn.com/w320/jp.png,Tokyo,JPY,125000000,35.676191,139.650376,4231000000000,2.5,20,Low,16,Hujan
+Singapore,SG,https://flagcdn.com/w320/sg.png,Singapore,SGD,6000000,1.352083,103.819836,466000000000,2.1,18,Low,28,Badai Guntur
+Russia,RU,https://flagcdn.com/w320/ru.png,Moscow,RUB,146000000,55.755826,37.617300,2240000000000,7.4,75,High,10,Mendung
+Brazil,BR,https://flagcdn.com/w320/br.png,Brasilia,BRL,214000000,-15.793889,-47.882778,1920000000000,4.6,52,Medium,26,Cerah
+India,IN,https://flagcdn.com/w320/in.png,New Delhi,INR,1400000000,28.613939,77.209021,3390000000000,5.1,58,Medium,32,Berawan

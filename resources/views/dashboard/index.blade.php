@@ -7,16 +7,25 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <div class="mb-4">
-
-        <h2 class="fw-bold">
-            Dashboard
-        </h2>
-
-        <p class="text-muted">
-            Selamat datang di Sistem Monitoring Risiko Rantai Pasok Global
-        </p>
-
+    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div>
+            <h2 class="fw-bold mb-0">Dashboard Analytics</h2>
+            <p class="text-muted mb-0">Sistem Monitoring Risiko Rantai Pasok Global Berbasis Multi-API</p>
+        </div>
+        
+        <!-- Pemilih Negara (Fitur 1) -->
+        <div class="bg-white p-2 rounded shadow-sm border border-light d-flex align-items-center gap-2">
+            <label for="country_id" class="fw-semibold text-secondary mb-0">Negara:</label>
+            <form action="{{ route('dashboard') }}" method="GET" id="countrySelectForm" class="m-0">
+                <select name="country_id" id="country_id" class="form-select form-select-sm border-0 bg-light" style="font-weight: 500;" onchange="this.form.submit()">
+                    @foreach($countries as $c)
+                        <option value="{{ $c->id }}" {{ $selectedCountry && $selectedCountry->id == $c->id ? 'selected' : '' }}>
+                            {{ $c->country_name }} ({{ $c->country_code }})
+                        </option>
+                    @endforeach
+                </select>
+            </form>
+        </div>
     </div>
 
     {{-- Kartu Statistik --}}
@@ -74,7 +83,7 @@
 @endsection
 
 @push('scripts')
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
