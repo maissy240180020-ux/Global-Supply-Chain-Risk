@@ -74,10 +74,12 @@ Route::get('/risk', [RiskController::class, 'index'])
 */
 
 Route::get('/compare', [CompareController::class, 'index'])
-    ->name('compare.index');
+    ->name('compare.index')
+    ->middleware('auth');
 
 Route::post('/compare', [CompareController::class, 'compare'])
-    ->name('compare.compare');
+    ->name('compare.compare')
+    ->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
@@ -86,7 +88,8 @@ Route::post('/compare', [CompareController::class, 'compare'])
 */
 
 Route::get('/visualisasi', [VisualizationController::class, 'index'])
-    ->name('visualisasi.index');
+    ->name('visualisasi.index')
+    ->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
@@ -122,7 +125,16 @@ Route::get('/berita', [BeritaController::class, 'index'])
 */
 
 Route::get('/pelabuhan', [PelabuhanController::class, 'index'])
-    ->name('pelabuhan.index');
+    ->name('pelabuhan.index')
+    ->middleware('auth');
+
+Route::get('/pelabuhan/search-global', [PelabuhanController::class, 'searchGlobal'])
+    ->name('pelabuhan.search-global')
+    ->middleware('auth');
+
+Route::post('/pelabuhan/store-global', [PelabuhanController::class, 'storeGlobalPort'])
+    ->name('pelabuhan.store-global')
+    ->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------

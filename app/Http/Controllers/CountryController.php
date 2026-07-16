@@ -25,8 +25,19 @@ class CountryController extends Controller
 
         })
         ->orderBy('country_name')
-        ->paginate(5)
+        ->paginate(15)
         ->withQueryString();
+
+        if ($request->ajax()) {
+            $html = view('countries.partials.rows', compact('countries'))->render();
+            return response()->json([
+                'html' => $html,
+                'next_page' => $countries->nextPageUrl(),
+                'has_more' => $countries->hasMorePages(),
+                'current_count' => $countries->lastItem() ?? 0,
+                'total' => $countries->total()
+            ]);
+        }
 
         $mapCountries = Country::all();
 

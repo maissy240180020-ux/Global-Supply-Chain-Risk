@@ -16,7 +16,9 @@
         @if(count($watchlist) > 0)
         <!-- Search Input -->
         <div class="position-relative" style="width: 250px;">
-            <input type="text" id="watchlistSearch" class="form-control" placeholder="Cari negara terpantau...">
+            <input type="text" id="watchlistSearch" class="form-control ps-5 border-light shadow-none" 
+                   placeholder="Cari negara terpantau..."
+                   style="font-size: 0.85rem; border-radius: 10px; background-color: #f8fafc; height: 38px;">
             <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" style="font-size: 0.9rem;"></i>
         </div>
         @endif
