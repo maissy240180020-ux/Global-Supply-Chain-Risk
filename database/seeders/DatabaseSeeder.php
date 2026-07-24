@@ -10,19 +10,24 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // User (Maissy)
         User::updateOrCreate(
-
-            [
-                'email' => 'maissy@gmail.com'
-            ],
-
+            ['email' => 'maissy@gmail.com'],
             [
                 'name' => 'Maissy Mayuni Safrida',
-
-                'password' => Hash::make('maissy123')
-
+                'password' => Hash::make('maissy123'),
+                'role' => 'user'
             ]
+        );
 
+        // Administrator Default
+        User::updateOrCreate(
+            ['email' => 'admin@simrpg.com'],
+            [
+                'name' => 'Administrator',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin'
+            ]
         );
         $this->call(CountrySeeder::class);
         $this->call(LexiconSeeder::class);

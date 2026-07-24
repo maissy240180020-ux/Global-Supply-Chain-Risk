@@ -20,87 +20,51 @@ class ApiCountryController extends Controller
     // ==========================================
     public function index()
     {
-        // 1. Ambil data dari REST Countries API (PDF Halaman 3)
-        $restCountries = $this->countryService->getCountries();
+        // View dashboard API admin
+        return view('admin.api');
+    }
 
-        // 2. Ambil data lokal untuk pemilih negara World Bank API (PDF Halaman 2)
-        $dbCountries = Country::orderBy('country_name')->get();
-        
-        $selectedCountryId = request('country_id');
-        $selectedCountry = null;
+    /**
+     * Endpoint internal API untuk mengecek latensi semua eksternal API
+     */
+    public function ping()
+    {
+        $apis = [
+            'world_bank' => ['name' => 'World Bank API', 'url' => 'http://api.worldbank.org/v2/country/id/indicator/NY.GDP.MKTP.CD?format=json'],
+            'rest_countries' => ['name' => 'REST Countries', 'url' => 'https://restcountries.com/v3.1/alpha/id'],
+            'exchange_rate' => ['name' => 'ExchangeRate', 'url' => 'https://open.er-api.com/v6/latest/USD'],
+            'open_meteo' => ['name' => 'Open-Meteo', 'url' => 'https://api.open-meteo.com/v1/forecast?latitude=-6.2088&longitude=106.8456&current=temperature_2m'],
+            'gnews' => ['name' => 'GNews API', 'url' => 'https://gnews.io/api/v4/search?q=logistics&max=1&apikey=dummy'], // Just pinging endpoint
+            'local_api' => ['name' => 'Local REST API', 'url' => url('/api/countries')]
+        ];
 
-        if ($selectedCountryId) {
-            $selectedCountry = Country::find($selectedCountryId);
-        }
+        $results = [];
 
-        if (!$selectedCountry) {
-            $selectedCountry = Country::where('country_code', 'ID')->first() ?? Country::first();
-        }
-
-        // Fetch data from World Bank API for the selected country
-        $gdp = null;
-        $inflation = null;
-        $population = null;
-        $exports = null;
-        $imports = null;
-
-        if ($selectedCountry) {
-            $code = strtolower($selectedCountry->country_code);
-            $indicators = [
-                'gdp' => 'NY.GDP.MKTP.CD',
-                'inflation' => 'FP.CPI.TOTL.ZG',
-                'population' => 'SP.POP.TOTL',
-                'exports' => 'NE.EXP.GNFS.CD',
-                'imports' => 'NE.IMP.GNFS.CD'
-            ];
-
+        foreach ($apis as $key => $api) {
+            $start = microtime(true);
             try {
-                $responseGdp = Http::timeout(4)->get("http://api.worldbank.org/v2/country/{$code}/indicator/{$indicators['gdp']}", [
-                    'format' => 'json',
-                    'per_page' => 5
-                ])->json();
-                
-                $responseInflation = Http::timeout(4)->get("http://api.worldbank.org/v2/country/{$code}/indicator/{$indicators['inflation']}", [
-                    'format' => 'json',
-                    'per_page' => 5
-                ])->json();
+                // Timeout singkat 3 detik
+                $response = Http::timeout(3)->withoutVerifying()->get($api['url']);
+                $end = microtime(true);
+                $latency = round(($end - $start) * 1000); // ms
 
-                $responsePopulation = Http::timeout(4)->get("http://api.worldbank.org/v2/country/{$code}/indicator/{$indicators['population']}", [
-                    'format' => 'json',
-                    'per_page' => 5
-                ])->json();
-
-                $responseExports = Http::timeout(4)->get("http://api.worldbank.org/v2/country/{$code}/indicator/{$indicators['exports']}", [
-                    'format' => 'json',
-                    'per_page' => 5
-                ])->json();
-
-                $responseImports = Http::timeout(4)->get("http://api.worldbank.org/v2/country/{$code}/indicator/{$indicators['imports']}", [
-                    'format' => 'json',
-                    'per_page' => 5
-                ])->json();
-
-                $gdp = isset($responseGdp[1]) ? $responseGdp[1] : null;
-                $inflation = isset($responseInflation[1]) ? $responseInflation[1] : null;
-                $population = isset($responsePopulation[1]) ? $responsePopulation[1] : null;
-                $exports = isset($responseExports[1]) ? $responseExports[1] : null;
-                $imports = isset($responseImports[1]) ? $responseImports[1] : null;
-
+                $results[$key] = [
+                    'name' => $api['name'],
+                    'status' => $response->successful() || $response->status() === 401 || $response->status() === 403 ? 'Connected' : 'Disconnected',
+                    'latency' => $latency . ' ms',
+                    'success' => $response->successful() || $response->status() === 401 || $response->status() === 403
+                ];
             } catch (\Exception $e) {
-                // API fallback handled in view
+                $results[$key] = [
+                    'name' => $api['name'],
+                    'status' => 'Disconnected',
+                    'latency' => 'Timeout',
+                    'success' => false
+                ];
             }
         }
 
-        return view('countries.api', compact(
-            'restCountries',
-            'dbCountries',
-            'selectedCountry',
-            'gdp',
-            'inflation',
-            'population',
-            'exports',
-            'imports'
-        ));
+        return response()->json($results);
     }
 
     // ==========================================

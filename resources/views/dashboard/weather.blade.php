@@ -2,11 +2,11 @@
 
     <!-- 🌤 Fitur 3: Ringkasan Cuaca Realtime (Open-Meteo API) -->
     <div class="col-lg-4 mb-4">
-        <div class="card dashboard-card h-100 shadow-sm border-0">
+        <div class="card dashboard-card h-100 border-0" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.03)';">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h6 class="fw-bold mb-0">🌤️ Cuaca Realtime (API)</h6>
-                    <span class="badge bg-info">Realtime</span>
+                    <div class="badge-realtime" style="padding: 3px 8px; font-size: 0.65rem;"><i class="bi bi-record-circle-fill"></i> Realtime</div>
                 </div>
 
                 @if($cuaca)
@@ -37,11 +37,11 @@
 
     <!-- 💱 Fitur 4: Nilai Tukar Realtime (Frankfurter API) -->
     <div class="col-lg-4 mb-4">
-        <div class="card dashboard-card h-100 shadow-sm border-0">
+        <div class="card dashboard-card h-100 border-0" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.03)';">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="fw-bold mb-0">💱 Nilai Tukar Realtime (API)</h6>
-                    <span class="badge bg-warning text-dark">USD Base</span>
+                    <h6 class="fw-bold mb-0">💱 Nilai Tukar (API)</h6>
+                    <div class="badge-realtime" style="padding: 3px 8px; font-size: 0.65rem;"><i class="bi bi-record-circle-fill"></i> Realtime</div>
                 </div>
 
                 <div class="text-center my-3">
@@ -81,16 +81,11 @@
 
     <!-- 📰 Fitur 5 & AI: News Intelligence & Sentiment Analysis (RSS Parsing) -->
     <div class="col-lg-4 mb-4">
-        <div class="card dashboard-card h-100 shadow-sm border-0">
+        <div class="card dashboard-card h-100 border-0" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.03)';">
             <div class="card-body d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="fw-bold mb-0">📰 Sentimen Berita Rantai Pasok</h6>
-                    @php
-                        $sentColor = 'bg-secondary';
-                        if ($sentiment === 'Positive') $sentColor = 'bg-success';
-                        if ($sentiment === 'Negative') $sentColor = 'bg-danger';
-                    @endphp
-                    <span class="badge {{ $sentColor }}">{{ $sentiment }}</span>
+                    <h6 class="fw-bold mb-0">📰 Sentimen Berita</h6>
+                    <div class="badge-realtime" style="padding: 3px 8px; font-size: 0.65rem;"><i class="bi bi-record-circle-fill"></i> Realtime</div>
                 </div>
 
                 <div class="flex-grow-1" style="font-size: 0.8rem; max-height: 180px; overflow-y: auto;">

@@ -1,4 +1,4 @@
-<nav class="navbar bg-white shadow-sm px-4">
+<nav class="navbar bg-white px-4" style="box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;">
 
     <h4 class="mb-0 fw-bold">
 

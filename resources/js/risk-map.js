@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const map = L.map(element).setView([-2.5, 118], 5);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap contributors, © CARTO'
     }).addTo(map);
 
     L.marker([-6.2, 106.8])

@@ -247,9 +247,9 @@ body{
 
 }
 .menu a.active{
-    background:#1e293b;
+    background: rgba(59, 130, 246, 0.08);
     border-radius:10px;
-    color:#fff;
+    color: #60a5fa;
     font-weight:600;
 }
 .dashboard-card{
@@ -399,43 +399,29 @@ SIDEBAR
 ============================ */
 
 .sidebar{
-
     width:260px;
     height:100vh;
-
     position:fixed;
     top:0;
     left:0;
-
     background:#0f172a;
-
-    overflow-y:auto;
-    overflow-x:hidden;
-
+    overflow:hidden;
     display:flex;
     flex-direction:column;
-
     z-index:1000;
-
 }
 
-.sidebar::-webkit-scrollbar{
-
-    width:6px;
-
+.menu::-webkit-scrollbar{
+    width:5px;
 }
 
-.sidebar::-webkit-scrollbar-thumb{
-
-    background:#334155;
-    border-radius:20px;
-
+.menu::-webkit-scrollbar-thumb{
+    background:rgba(255, 255, 255, 0.15);
+    border-radius:10px;
 }
 
-.sidebar::-webkit-scrollbar-track{
-
+.menu::-webkit-scrollbar-track{
     background:transparent;
-
 }
 
 .logo{
@@ -495,25 +481,15 @@ SIDEBAR
 }
 
 .menu li a{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
+    gap:10px;
     color:white;
-
     text-decoration:none;
-
-    padding:12px 15px;
-
+    padding:10px 12px;
     border-radius:10px;
-
     transition:.3s;
-
-    font-size:16px;
-
+    font-size:14px;
 }
 
 .menu li a:hover{
@@ -523,11 +499,14 @@ SIDEBAR
 }
 
 .menu li a.active{
-
-    background:#1e293b;
-
-    font-weight:600;
-
+    background: rgba(59, 130, 246, 0.08);
+    color: #60a5fa;
+    font-weight: 600;
+    border-left: 4px solid #3b82f6;
+    border-radius: 4px 10px 10px 4px;
+}
+.menu li a.active i {
+    color: #60a5fa;
 }
 
 .menu li i{

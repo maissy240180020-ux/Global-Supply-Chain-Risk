@@ -77,10 +77,10 @@
 
         <div class="text-center mt-4">
             <a
-                href="{{ route('countries.api') }}"
+                href="{{ route('countries.index') }}"
                 class="btn btn-outline-primary">
                 <i class="bi bi-globe2"></i>
-                Lihat Integrasi & API Negara
+                Lihat Semua Negara
             </a>
         </div>
 

@@ -1,275 +1,370 @@
 @extends('layouts.app')
 
-@section('title', 'Pemantauan Cuaca Realtime')
+@section('title', 'Pantauan Cuaca Global')
 
 @section('content')
 
-<div class="container-fluid">
+<style>
+    .hover-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hover-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.06) !important; }
+    
+    .loading-shimmer {
+        animation: shimmer 2s infinite linear;
+        background: linear-gradient(to right, #f6f7f8 4%, #edeef1 25%, #f6f7f8 36%);
+        background-size: 1000px 100%;
+    }
+    @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+    }
+</style>
 
-    <!-- Header & Dropdown -->
-    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
         <div>
-            <h2 class="fw-bold mb-0">🌦️ Weather Intelligence Center</h2>
-            <p class="text-muted mb-0">Pemantauan Kondisi Cuaca Global & Analisis Risiko Logistik Rantai Pasok</p>
+            <h2 class="fw-bold mb-0 text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-cloud-haze2-fill text-info"></i> Pantauan Cuaca Global
+            </h2>
+            <p class="text-muted mb-0 mt-1" style="font-size: 0.95rem;">Monitor kondisi cuaca ekstrem di pusat logistik utama secara real-time.</p>
         </div>
-        
-        <!-- Pemilih Negara -->
-        <div class="bg-white p-2 rounded shadow-sm border border-light d-flex align-items-center gap-2">
-            <label for="country_id" class="fw-semibold text-secondary mb-0">Negara:</label>
-            <form action="{{ route('cuaca.index') }}" method="GET" id="countrySelectForm" class="m-0">
-                <select name="country_id" id="country_id" class="form-select form-select-sm border-0 bg-light" style="font-weight: 500;" onchange="this.form.submit()">
-                    @foreach($countries as $c)
-                        <option value="{{ $c->id }}" {{ $selectedCountry && $selectedCountry->id == $c->id ? 'selected' : '' }}>
-                            {{ $c->country_name }} ({{ $c->country_code }})
-                        </option>
+        <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <label class="fw-semibold text-muted small mb-0 text-nowrap"><i class="bi bi-geo-alt-fill text-danger me-1"></i> Lokasi:</label>
+                <select id="countrySelect" class="form-select bg-white shadow-sm border-light fw-medium text-dark" style="width: auto; min-width: 220px; border-radius: 10px; height: 42px;" onchange="refreshWeather()">
+                    <option value="world" {{ $countryCode == 'world' ? 'selected' : '' }}>🌍 Seluruh Dunia (Global)</option>
+                    @foreach($allCountries as $c)
+                        <option value="{{ $c->country_code }}" {{ $countryCode == $c->country_code ? 'selected' : '' }}>{{ $c->country_name }}</option>
                     @endforeach
                 </select>
-            </form>
+            </div>
+            <button id="refreshBtn" class="btn btn-primary text-white fw-semibold shadow-sm px-4 d-flex align-items-center gap-2" style="border-radius: 10px; height: 42px;" onclick="refreshWeather()">
+                <i class="bi bi-arrow-clockwise"></i> Segarkan Data
+            </button>
         </div>
     </div>
 
-    @if($cuaca)
+    <!-- Error Banner -->
+    <div id="errorBanner" class="alert alert-danger shadow-sm border-0 mb-4 {{ $error ? '' : 'd-none' }}" style="border-radius: 16px; background-color: #fef2f2; color: #991b1b;">
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+            <div>
+                <h6 class="fw-bold mb-0">Gangguan Koneksi Cuaca</h6>
+                <p class="mb-0 small" id="errorMessage">{{ $error ?? 'Data cuaca tidak dapat dimuat. Silakan coba kembali.' }}</p>
+            </div>
+        </div>
+    </div>
 
-    <div class="row g-4">
-        
-        <!-- Main Weather Card -->
-        <div class="col-lg-5 col-md-12">
-            <div class="card border-0 shadow-sm h-100 overflow-hidden text-white" 
-                 style="border-radius: 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
-                
-                <div class="card-body p-4 d-flex flex-column justify-content-between">
-                    <div>
-                        <!-- Location Title -->
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <span class="badge bg-light text-dark fw-semibold px-2 py-1 mb-2" style="font-size: 0.7rem; letter-spacing: 0.05em;">
-                                    STASIUN PEMANTAU
-                                </span>
-                                <h3 class="fw-bold mb-0">{{ $selectedCountry->country_name }}</h3>
-                                <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
-                                    <i class="bi bi-geo-alt-fill me-1"></i> Ibukota: {{ $selectedCountry->capital ?? '-' }}
-                                </p>
-                            </div>
-                            @if($selectedCountry->flag)
-                                <img src="{{ $selectedCountry->flag }}" alt="{{ $selectedCountry->country_name }}" style="height: 32px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
-                            @else
-                                <span class="fs-2">🌍</span>
-                            @endif
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="d-none justify-content-center align-items-center py-5 bg-white shadow-sm mb-4" style="border-radius: 16px;">
+        <div class="d-flex flex-column align-items-center">
+            <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;"></div>
+            <span class="fw-bold text-muted">Menghubungkan ke satelit Open-Meteo...</span>
+        </div>
+    </div>
+
+    <div id="weatherContent" class="{{ $error ? 'd-none' : '' }}">
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-4" id="statsContainer">
+            <!-- Rata-rata Suhu -->
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 hover-card h-100" style="border-radius: 16px; background-color: #fef3c7;">
+                    <div class="card-body p-4 d-flex align-items-center gap-4">
+                        <div class="bg-white text-warning rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="bi bi-thermometer-sun fs-2"></i>
                         </div>
-
-                        <!-- Weather Big display -->
-                        <div class="d-flex align-items-center my-4 py-3 justify-content-between">
-                            <div>
-                                <h1 class="fw-bold mb-0 text-white" style="font-size: 4rem; line-height: 1;">
-                                    {{ $cuaca['temperature_2m'] }}<span style="font-size: 2rem; vertical-align: top;">°C</span>
-                                </h1>
-                                <span class="badge rounded-pill mt-2 px-3 py-1.5 fw-semibold" 
-                                      style="background-color: {{ $cuaca['color'] }}1F; color: {{ $cuaca['color'] }}; font-size: 0.85rem; border: 1px solid {{ $cuaca['color'] }}33;">
-                                    ● {{ $cuaca['description'] }}
-                                </span>
-                            </div>
-                            <div class="pe-3">
-                                <i class="bi {{ $cuaca['icon'] }}" 
-                                   style="font-size: 5.5rem; color: {{ $cuaca['color'] }}; filter: drop-shadow(0px 0px 15px {{ $cuaca['color'] }}4d);"></i>
-                            </div>
+                        <div>
+                            <p class="text-warning text-darken fw-bold mb-1 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Rata-rata Suhu</p>
+                            <h3 class="fw-bolder mb-0 text-dark" id="statTemp">{{ $stats['avg_temp'] }}°C</h3>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Lokasi Cuaca Ekstrem -->
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 hover-card h-100" style="border-radius: 16px; background-color: #ffe4e6;">
+                    <div class="card-body p-4 d-flex align-items-center gap-4">
+                        <div class="bg-white text-danger rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="bi bi-cloud-lightning-rain-fill fs-2"></i>
+                        </div>
+                        <div>
+                            <p class="text-danger fw-bold mb-1 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Titik Risiko Tinggi</p>
+                            <h3 class="fw-bolder mb-0 text-dark" id="statExtreme">{{ $stats['extreme_count'] }} <span class="fs-6 fw-normal text-muted">Lokasi</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Coordinates and update status -->
-                    <div class="border-top border-secondary pt-3 mt-3" style="font-size: 0.8rem;">
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="text-white-50 d-block">LATITUDE / LONGITUDE</span>
-                                <span class="fw-semibold text-white">{{ number_format($selectedCountry->latitude, 4) }} / {{ number_format($selectedCountry->longitude, 4) }}</span>
-                            </div>
-                            <div class="col-6 text-end">
-                                <span class="text-white-50 d-block">TERAKHIR DIUPDATE</span>
-                                <span class="fw-semibold text-white">{{ $cuaca['formatted_time'] }}</span>
-                            </div>
+            <!-- Kecepatan Angin Maksimal -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 hover-card h-100" style="border-radius: 16px; background-color: #e0f2fe;">
+                    <div class="card-body p-4 d-flex align-items-center gap-4">
+                        <div class="bg-white text-info rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="bi bi-wind fs-2"></i>
+                        </div>
+                        <div>
+                            <p class="text-info text-darken fw-bold mb-1 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Angin Terkencang</p>
+                            <h3 class="fw-bolder mb-0 text-dark">
+                                <span id="statWind">{{ $stats['max_wind'] }}</span> <span class="fs-6 fw-normal text-muted">km/h di</span> 
+                                <span id="statWindLoc" class="text-primary">{{ $stats['max_wind_loc'] }}</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Map Section -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0 h-100 hover-card" style="border-radius: 16px; overflow: hidden;">
+                    <div class="card-header bg-white border-bottom-0 py-3 d-flex justify-content-between align-items-center">
+                        <h6 class="fw-bold text-dark mb-0"><i class="bi bi-map text-primary me-2"></i> Radar Cuaca Live</h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="weatherMap" style="height: 480px; width: 100%; z-index: 1;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 h-100 hover-card" style="border-radius: 16px;">
+                    <div class="card-header bg-white border-bottom-0 py-3">
+                        <h6 class="fw-bold text-dark mb-0"><i class="bi bi-bar-chart-fill text-warning me-2"></i> Perbandingan Suhu (°C)</h6>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <div id="tempChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    let map = null;
+    let markersLayer = null;
+    let tempChart = null;
+    
+    // Inisialisasi Data dari PHP (Load Pertama)
+    const initialData = @json($weatherData);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initMap();
+        initChart();
+        if (initialData && initialData.length > 0) {
+            renderMapMarkers(initialData);
+            renderChart(initialData);
+        }
+    });
+
+    function initMap() {
+        // Hancurkan map jika sudah ada untuk menghindari '_leaflet_events' error
+        if (map !== null && map !== undefined) {
+            map.remove();
+        }
+        
+        map = L.map('weatherMap').setView([20, 0], 2);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; Carto'
+        }).addTo(map);
+        
+        markersLayer = L.layerGroup().addTo(map);
+    }
+
+    function initChart() {
+        const options = {
+            series: [{ name: 'Suhu (°C)', data: [] }],
+            chart: { type: 'bar', height: 400, toolbar: { show: false } },
+            plotOptions: {
+                bar: { borderRadius: 4, horizontal: true, distributed: true }
+            },
+            dataLabels: { enabled: true, formatter: function (val) { return val + "°C" } },
+            xaxis: { categories: [] },
+            legend: { show: false },
+            colors: ['#0dcaf0', '#0d6efd', '#ffc107', '#dc3545', '#20c997', '#6f42c1', '#fd7e14', '#e83e8c', '#6610f2', '#198754']
+        };
+        tempChart = new ApexCharts(document.querySelector("#tempChart"), options);
+        tempChart.render();
+    }
+
+    function renderMapMarkers(data) {
+        markersLayer.clearLayers();
+        let bounds = [];
+
+        data.forEach(item => {
+            // Tentukan warna marker berdasar risiko
+            let markerColor = '#0dcaf0'; // Low / Default
+            if (item.risk_level === 'Medium') markerColor = '#0d6efd';
+            if (item.risk_level === 'High') markerColor = '#ffc107';
+            if (item.risk_level === 'Extreme') markerColor = '#dc3545';
+
+            const customIcon = L.divIcon({
+                className: 'custom-weather-icon',
+                html: `<div style="background-color:${markerColor}; width:32px; height:32px; border-radius:50%; border:3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; color:white; font-size:16px; transition: transform 0.2s;"><i class="bi ${item.icon}"></i></div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                popupAnchor: [0, -16]
+            });
+
+            const popupContent = `
+                <div style="min-width: 220px; font-family: inherit;">
+                    <div class="d-flex align-items-center gap-2 mb-2 pb-2 border-bottom">
+                        <i class="bi ${item.icon} fs-4 text-dark"></i>
+                        <div>
+                            <h6 class="fw-bold mb-0 text-dark">${item.country_name}</h6>
+                            <span class="text-muted small">${item.condition}</span>
                         </div>
                     </div>
                     
-                </div>
-                
-            </div>
-        </div>
-
-        <!-- Detail Grid Cards -->
-        <div class="col-lg-7 col-md-12">
-            <div class="row g-3 h-100">
-                
-                <!-- Apparent Temp -->
-                <div class="col-sm-6 col-12">
-                    <div class="card border-0 shadow-sm h-100" style="border-radius: 16px;">
-                        <div class="card-body p-4 d-flex align-items-center gap-3">
-                            <div class="d-flex align-items-center justify-content-center rounded-circle" 
-                                 style="width: 50px; height: 50px; background-color: rgba(239, 68, 68, 0.12); color: #ef4444; flex-shrink: 0;">
-                                <i class="bi bi-thermometer-half fs-4"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted d-block fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-                                    Suhu Terasa
-                                </small>
-                                <h3 class="fw-bold mb-0 mt-1 text-dark">
-                                    {{ $cuaca['apparent_temperature'] ?? $cuaca['temperature_2m'] }} °C
-                                </h3>
-                                <small class="text-muted" style="font-size: 0.75rem;">Suhu riil yang dirasakan lingkungan</small>
-                            </div>
-                        </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted small"><i class="bi bi-thermometer-half"></i> Suhu</span>
+                        <strong class="text-dark">${item.temp}°C</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted small"><i class="bi bi-wind"></i> Angin</span>
+                        <strong class="text-dark">${item.wind} km/h</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted small"><i class="bi bi-droplet"></i> Curah Hujan</span>
+                        <strong class="text-dark">${item.rain} mm</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                        <span class="text-muted small"><i class="bi bi-water"></i> Kelembapan</span>
+                        <strong class="text-dark">${item.humidity}%</strong>
+                    </div>
+                    
+                    <div class="mt-2 text-center">
+                        <span class="badge bg-${item.risk_color} w-100 py-2 shadow-sm" style="border-radius:8px;">Risiko Cuaca: ${item.risk_level}</span>
                     </div>
                 </div>
+            `;
 
-                <!-- Humidity -->
-                <div class="col-sm-6 col-12">
-                    <div class="card border-0 shadow-sm h-100" style="border-radius: 16px;">
-                        <div class="card-body p-4 d-flex align-items-center gap-3">
-                            <div class="d-flex align-items-center justify-content-center rounded-circle" 
-                                 style="width: 50px; height: 50px; background-color: rgba(2, 132, 199, 0.12); color: #0284c7; flex-shrink: 0;">
-                                <i class="bi bi-droplet-fill fs-4"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted d-block fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-                                    Kelembaban Udara
-                                </small>
-                                <h3 class="fw-bold mb-0 mt-1 text-dark">
-                                    {{ $cuaca['relative_humidity_2m'] ?? 0 }} %
-                                </h3>
-                                <small class="text-muted" style="font-size: 0.75rem;">Persentase uap air di atmosfer</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            L.marker([item.lat, item.lng], {icon: customIcon})
+             .bindPopup(popupContent, {
+                 closeButton: false,
+                 className: 'modern-popup'
+             })
+             .addTo(markersLayer);
+             
+            bounds.push([item.lat, item.lng]);
+        });
 
-                <!-- Wind -->
-                <div class="col-sm-6 col-12">
-                    <div class="card border-0 shadow-sm h-100" style="border-radius: 16px;">
-                        <div class="card-body p-4 d-flex align-items-center gap-3">
-                            <div class="d-flex align-items-center justify-content-center rounded-circle" 
-                                 style="width: 50px; height: 50px; background-color: rgba(20, 184, 166, 0.12); color: #14b8a6; flex-shrink: 0;">
-                                <i class="bi bi-wind fs-4"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted d-block fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-                                    Kecepatan Angin
-                                </small>
-                                <h3 class="fw-bold mb-0 mt-1 text-dark">
-                                    {{ $cuaca['wind_speed_10m'] ?? 0 }} <span style="font-size: 1rem; font-weight: normal;">km/jam</span>
-                                </h3>
-                                <small class="text-muted" style="font-size: 0.75rem;">Hembusan udara dari arah {{ $cuaca['wind_direction_10m'] ?? 0 }}°</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        if (bounds.length > 0) {
+            map.fitBounds(bounds, {padding: [50, 50], maxZoom: 6});
+        }
+    }
 
-                <!-- Precipitation -->
-                <div class="col-sm-6 col-12">
-                    <div class="card border-0 shadow-sm h-100" style="border-radius: 16px;">
-                        <div class="card-body p-4 d-flex align-items-center gap-3">
-                            <div class="d-flex align-items-center justify-content-center rounded-circle" 
-                                 style="width: 50px; height: 50px; background-color: rgba(99, 102, 241, 0.12); color: #6366f1; flex-shrink: 0;">
-                                <i class="bi bi-cloud-rain-heavy-fill fs-4"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted d-block fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-                                    Curah Hujan
-                                </small>
-                                <h3 class="fw-bold mb-0 mt-1 text-dark">
-                                    {{ $cuaca['precipitation'] ?? 0.0 }} <span style="font-size: 1rem; font-weight: normal;">mm</span>
-                                </h3>
-                                <small class="text-muted" style="font-size: 0.75rem;">Volume presipitasi saat ini</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Supply Chain Logistics Weather Impact Assessment -->
-    <div class="card border-0 shadow-sm mt-4 overflow-hidden" style="border-radius: 16px;">
-        <div class="card-header bg-white py-3 border-light d-flex justify-content-between align-items-center">
-            <h5 class="fw-bold text-dark mb-0 d-flex align-items-center gap-2">
-                <i class="bi bi-shield-shaded text-primary"></i> Analisis Risiko Rantai Pasok Berbasis Cuaca
-            </h5>
-            
-            @php
-                $code = $cuaca['weather_code'] ?? 0;
-                // High risk weather (storms, heavy snow, thunder)
-                if (in_array($code, [95, 96, 99, 71, 73, 75, 77, 85, 86])) {
-                    $riskLabel = 'RISIKO TINGGI';
-                    $riskBadgeColor = 'bg-danger text-white';
-                    $alertBg = 'rgba(239, 68, 68, 0.06)';
-                    $alertBorder = '#fecaca';
-                    $alertIcon = 'bi-exclamation-triangle-fill text-danger';
-                }
-                // Medium risk (rain, drizzle, fog)
-                elseif (in_array($code, [45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82])) {
-                    $riskLabel = 'RISIKO SEDANG';
-                    $riskBadgeColor = 'bg-warning text-dark';
-                    $alertBg = 'rgba(245, 158, 11, 0.06)';
-                    $alertBorder = '#fef08a';
-                    $alertIcon = 'bi-exclamation-circle-fill text-warning';
-                }
-                // Low risk (clear, partly cloudy)
-                else {
-                    $riskLabel = 'RISIKO RENDAH';
-                    $riskBadgeColor = 'bg-success text-white';
-                    $alertBg = 'rgba(16, 185, 129, 0.06)';
-                    $alertBorder = '#bbf7d0';
-                    $alertIcon = 'bi-check-circle-fill text-success';
-                }
-            @endphp
-            
-            <span class="badge {{ $riskBadgeColor }} fw-bold px-3 py-1.5 rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.05em;">
-                {{ $riskLabel }}
-            </span>
-        </div>
+    function renderChart(data) {
+        // Ambil top 10 negara secara acak untuk grafik agar tidak terlalu padat
+        const chartData = data.slice(0, 10);
+        const categories = chartData.map(item => item.country_code);
+        const seriesData = chartData.map(item => item.temp);
         
-        <div class="card-body p-4" style="background-color: {{ $alertBg }}; border-top: 1px solid {{ $alertBorder }};">
-            <div class="d-flex gap-3 align-items-start">
-                <i class="bi {{ $alertIcon }} fs-2" style="line-height: 1;"></i>
-                <div>
-                    @if($riskLabel === 'RISIKO TINGGI')
-                        <h5 class="fw-bold text-danger">⚠️ Peringatan Keterlambatan Logistik Signifikan</h5>
-                        <p class="text-dark mb-0" style="line-height: 1.6;">
-                            Kondisi cuaca ekstrim (<strong>{{ $cuaca['description'] }}</strong>) sedang melanda wilayah <strong>{{ $selectedCountry->country_name }}</strong>. 
-                            Ini sangat berisiko mengganggu operasional logistik pelabuhan (bongkar muat kapal cargo) serta dapat menyebabkan pembatalan penerbangan kargo udara.
-                            Kami merekomendasikan untuk menunda atau mengalihkan pengiriman penting jika memungkinkan, dan mengaktifkan rencana kontingensi rute alternatif.
-                        </p>
-                    @elseif($riskLabel === 'RISIKO SEDANG')
-                        <h5 class="fw-bold text-warning" style="color: #b45309 !important;">⚠️ Rekomendasi Pemantauan Rutin</h5>
-                        <p class="text-dark mb-0" style="line-height: 1.6;">
-                            Kondisi cuaca basah/berkabut (<strong>{{ $cuaca['description'] }}</strong>) dilaporkan di wilayah <strong>{{ $selectedCountry->country_name }}</strong>. 
-                            Operasional logistik jalan darat dan aktivitas pelabuhan mungkin mengalami sedikit perlambatan akibat penurunan visibilitas atau genangan air setempat. 
-                            Harap pantau estimasi waktu kedatangan kontainer secara berkala dan hubungi pihak otoritas pelabuhan setempat jika ada penundaan jadwal.
-                        </p>
-                    @else
-                        <h5 class="fw-bold text-success">✅ Kondisi Operasional Sangat Kondusif</h5>
-                        <p class="text-dark mb-0" style="line-height: 1.6;">
-                            Cuaca <strong>{{ $cuaca['description'] }}</strong> di wilayah <strong>{{ $selectedCountry->country_name }}</strong>. 
-                            Tidak ada ancaman cuaca signifikan yang dilaporkan. Operasional pelabuhan laut, jalur logistik darat, dan penerbangan kargo udara berjalan dengan aman dan lancar. 
-                            Ini adalah waktu yang optimal untuk mempercepat pemrosesan pengiriman barang Anda.
-                        </p>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
+        tempChart.updateSeries([{ data: seriesData }]);
+        tempChart.updateOptions({ xaxis: { categories: categories } });
+    }
 
-    @else
+    function refreshWeather() {
+        const country = document.getElementById('countrySelect').value;
+        const btn = document.getElementById('refreshBtn');
+        const content = document.getElementById('weatherContent');
+        const loading = document.getElementById('loadingOverlay');
+        const errorBanner = document.getElementById('errorBanner');
 
-    <div class="alert alert-danger shadow-sm border-0 d-flex align-items-center gap-3 p-4" style="border-radius: 16px;">
-        <i class="bi bi-x-circle-fill fs-3"></i>
-        <div>
-            <h5 class="fw-bold mb-1">Gagal Mengambil Data Cuaca</h5>
-            <p class="mb-0">Tidak dapat terhubung ke API stasiun cuaca. Harap periksa jaringan Anda atau coba lagi beberapa saat lagi.</p>
-        </div>
-    </div>
+        // UI Loading State
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Menyinkronkan...';
+        btn.disabled = true;
+        content.classList.add('d-none');
+        loading.classList.remove('d-none');
+        loading.classList.add('d-flex');
+        errorBanner.classList.add('d-none');
 
-    @endif
+        // Update URL hash/query without reloading
+        const url = new URL(window.location.href);
+        url.searchParams.set('country', country);
+        window.history.pushState({}, '', url);
 
-</div>
+        // Tambah timestamp agar browser tidak menggunakan cache
+        url.searchParams.set('_t', new Date().getTime());
 
-@endsection
+        fetch(url, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' }
+        })
+        .then(res => {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+        })
+        .then(res => {
+            if (res.error) {
+                showError(res.error);
+            } else {
+                try {
+                    // Update Stats
+                    if (res.stats) {
+                        document.getElementById('statTemp').innerText = (res.stats.avg_temp || 0) + '°C';
+                        document.getElementById('statExtreme').innerText = res.stats.extreme_count || 0;
+                        document.getElementById('statWind').innerText = res.stats.max_wind || 0;
+                        document.getElementById('statWindLoc').innerText = res.stats.max_wind_loc || '-';
+                    }
+                    
+                    // Re-init map fully just to be safe
+                    initMap();
+                    
+                    // Update Map & Chart
+                    if (res.data) {
+                        renderMapMarkers(res.data);
+                        renderChart(res.data);
+                    }
+                    
+                    content.classList.remove('d-none');
+                } catch(e) {
+                    showError("Client Error", e);
+                }
+            }
+        })
+        .catch(err => {
+            showError("Network Error", err);
+        })
+        .finally(() => {
+            btn.innerHTML = '<i class="bi bi-arrow-clockwise"></i> Segarkan Data';
+            btn.disabled = false;
+            loading.classList.remove('d-flex');
+            loading.classList.add('d-none');
+        });
+    }
+
+    function showError(logContext, errorObj = null) {
+        // Log teknis untuk developer
+        console.error("Cuaca API Error [" + logContext + "]:", errorObj);
+        
+        // Tampilkan pesan ramah pengguna
+        document.getElementById('errorBanner').classList.remove('d-none');
+        document.getElementById('errorMessage').textContent = 'Data cuaca gagal dimuat dari satelit saat ini. Silakan coba kembali beberapa saat lagi.';
+    }
+</script>
+
+<style>
+/* Leaflet Popup Modernization */
+.modern-popup .leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 4px;
+}
+.modern-popup .leaflet-popup-tip {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.custom-weather-icon {
+    background: transparent;
+    border: none;
+}
+.custom-weather-icon div:hover {
+    transform: scale(1.15);
+}
+</style>
+@endpush

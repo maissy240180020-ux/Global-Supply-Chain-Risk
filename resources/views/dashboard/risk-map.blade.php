@@ -29,9 +29,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var riskMap = L.map('riskMap').setView([mapLat, mapLng], zoomLevel);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap contributors, © CARTO'
     }).addTo(riskMap);
+
+    setTimeout(function() {
+        riskMap.invalidateSize();
+    }, 150);
 
     // Kustomisasi Icon berdasarkan level risiko
     var greenIcon = new L.Icon({

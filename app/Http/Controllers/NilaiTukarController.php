@@ -10,69 +10,29 @@ class NilaiTukarController extends Controller
     public function index(Request $request)
     {
         $base = strtoupper($request->input('base', 'USD'));
-        
-        $supported = ['USD', 'IDR', 'EUR', 'JPY', 'GBP', 'AUD', 'SGD', 'CNY', 'INR', 'BRL', 'RUB', 'CAD', 'CHF', 'MYR', 'PHP', 'THB'];
-        
-        if (!in_array($base, $supported)) {
-            $base = 'USD';
-        }
-
-        $targets = array_diff($supported, [$base]);
-        $targetStr = implode(',', $targets);
-
         $kurs = null;
+        $supported = [];
+        $error = null;
 
         try {
-            $response = Http::timeout(10)->get(
-                'https://api.frankfurter.app/latest',
-                [
-                    'from' => $base,
-                    'to' => $targetStr
-                ]
-            );
+            // Menggunakan open.er-api.com yang gratis dan mendukung ~160 mata uang seluruh dunia
+            $response = Http::timeout(10)->get("https://open.er-api.com/v6/latest/{$base}");
 
             if ($response->successful()) {
-                $kurs = $response->json();
+                $data = $response->json();
+                if (isset($data['rates'])) {
+                    $kurs = [
+                        'base' => $base,
+                        'date' => date('Y-m-d H:i:s', $data['time_last_update_unix']),
+                        'rates' => $data['rates']
+                    ];
+                    $supported = array_keys($data['rates']);
+                }
+            } else {
+                throw new \Exception("Gagal menghubungi ExchangeRate API. Status: " . $response->status());
             }
         } catch (\Exception $e) {
-            // Abaikan error untuk fallback
-        }
-
-        if (!$kurs) {
-            // Mock dynamic fallback rates based on standard baseline USD rates
-            $usdRates = [
-                'USD' => 1.0,
-                'IDR' => 16250.0,
-                'EUR' => 0.92,
-                'JPY' => 158.0,
-                'GBP' => 0.78,
-                'AUD' => 1.50,
-                'SGD' => 1.35,
-                'CNY' => 7.25,
-                'INR' => 83.50,
-                'BRL' => 5.40,
-                'RUB' => 87.0,
-                'CAD' => 1.37,
-                'CHF' => 0.89,
-                'MYR' => 4.67,
-                'PHP' => 58.50,
-                'THB' => 36.40,
-            ];
-
-            $rates = [];
-            $baseUsdRate = $usdRates[$base] ?? 1.0;
-            foreach ($usdRates as $curr => $usdRate) {
-                if ($curr !== $base) {
-                    $rates[$curr] = $usdRate / $baseUsdRate;
-                }
-            }
-
-            $kurs = [
-                'amount' => 1.0,
-                'base' => $base,
-                'date' => now()->format('Y-m-d') . ' (Fallback)',
-                'rates' => $rates
-            ];
+            $error = $e->getMessage();
         }
 
         // Data pendukung nama mata uang dan bendera negara
@@ -95,6 +55,16 @@ class NilaiTukarController extends Controller
             'THB' => ['name' => 'Baht Thailand', 'flag' => '🇹🇭'],
         ];
 
-        return view('currency.index', compact('kurs', 'supported', 'base', 'currencyMeta'));
+        // Jika request via AJAX, kembalikan JSON
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => $error ? false : true,
+                'kurs'    => $kurs,
+                'error'   => $error,
+                'supported' => $supported
+            ]);
+        }
+
+        return view('currency.index', compact('kurs', 'supported', 'base', 'currencyMeta', 'error'));
     }
 }

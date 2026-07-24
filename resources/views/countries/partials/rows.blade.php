@@ -1,8 +1,8 @@
 @forelse($countries as $index => $country)
-<tr>
+<tr id="country-row-{{ $country->id }}" class="table-row-hover">
     <td class="text-center">
         <button class="btn btn-link p-0 toggle-favorite-btn" data-country-id="{{ $country->id }}" style="text-decoration: none; border: none; background: none;">
-            <i class="bi {{ $country->is_favorite ? 'bi-star-fill text-warning' : 'bi-star text-muted' }} fs-5 favorite-star-icon"></i>
+            <i class="bi {{ (isset($userFavorites) && in_array($country->id, $userFavorites)) ? 'bi-star-fill text-warning' : 'bi-star text-muted' }} fs-5 favorite-star-icon"></i>
         </button>
     </td>
 
@@ -42,8 +42,8 @@
     </td>
 
     <td class="text-center">
-        <a href="{{ route('countries.show', $country->id) }}" class="btn btn-info btn-sm text-white" style="background-color: #0dcaf0; border-color: #0dcaf0;">
-            <i class="bi bi-eye"></i> Detail
+        <a href="{{ route('countries.show', $country->id) }}" class="btn btn-info text-white shadow-sm" style="background-color: #0dcaf0; border-color: #0dcaf0; font-size: 0.88rem; font-weight: 500; border-radius: 8px;">
+            <i class="bi bi-eye me-1"></i> Lihat Detail
         </a>
     </td>
 </tr>

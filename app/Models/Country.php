@@ -36,4 +36,12 @@ class Country extends Model
         'is_favorite',
 
     ];
+
+    /**
+     * Get the users who favorited this country.
+     */
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'country_user');
+    }
 }

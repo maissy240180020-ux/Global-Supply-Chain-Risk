@@ -5,6 +5,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+window.L = L;
 
 import './risk-map';
 
